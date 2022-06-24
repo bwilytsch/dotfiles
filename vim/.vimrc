@@ -64,12 +64,11 @@ function DoFormat()
 endfunction
 
 if useformatting
-    autocmd BufWritePre *.md call DoFormat()
-    autocmd BufWritePre *.js call DoFormat()
-    autocmd BufWritePre *.jsx call DoFormat()
-    autocmd BufWritePre *.ts call DoFormat()
-    autocmd BufWritePre *.tsx call DoFormat()
-    autocmd InsertLeave *.tsx call DoFormat()
+    autocmd BufWritePre *.md Neoformat
+    autocmd BufWritePre *.js Neoformat
+    autocmd BufWritePre *.jsx Neoformat
+    autocmd BufWritePre *.ts Neoformat
+    autocmd BufWritePre *.tsx Neoformat
     autocmd BufWritePre *.html Neoformat
 endif
 

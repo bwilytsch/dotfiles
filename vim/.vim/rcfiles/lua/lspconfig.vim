@@ -50,4 +50,7 @@ lspconfig.cssls.setup{ on_attach=on_attach_vim, capabilities = capabilities }
 -- lspconfig.clojure_lsp.setup{ on_attach=on_attach_vim, capabilities = capabilities }
 lspconfig.gopls.setup { on_attach=on_attach_vim, capabilities = capabilities }
 lspconfig.sumneko_lua.setup { on_attach=on_attach_vim, capabilities = capabilities }
+lspconfig.eslint.setup {
+  capabilities = capabilities
+}
 END
