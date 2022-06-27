@@ -16,12 +16,12 @@ require('gitsigns').setup {
     interval = 1000,
     follow_files = true
   },
-  attach_to_untracked = true,
+  attach_to_untracked = false,
   current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
   current_line_blame_opts = {
     virt_text = true,
     virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-    delay = 120,
+    delay = 300,
     ignore_whitespace = true,
   },
   current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',

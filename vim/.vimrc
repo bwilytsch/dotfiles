@@ -82,10 +82,12 @@ nmap <silent> <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 "--- Remaps
-"Format
+" Format
 nnoremap <silent>ff    <cmd>Neoformat<CR><Esc>:w<CR>
-"Go to Def
+" Go to Def
 nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
+" Find references - replaced by telescope
+" nnoremap <silent>gr    <cmd>lua vim.lsp.buf.references()<CR>
 " Docs pls
 nnoremap <silent>K     <cmd>lua vim.lsp.buf.hover()<CR>
 " Params pls
