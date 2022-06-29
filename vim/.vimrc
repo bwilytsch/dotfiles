@@ -26,7 +26,7 @@ set hidden
 set signcolumn=yes
 set splitright
 set cmdheight=1
-" set relativenumber
+set relativenumber
 
 filetype plugin indent on
 filetype indent on
@@ -56,12 +56,6 @@ hi StatusLine guibg=black guifg=white ctermbg=black
 let g:neoformat_try_node_exe = 1
 
 let useformatting=1
-
-function DoFormat() 
-    if has("nvim") && g:useformatting
-        lua vim.lsp.buf.formatting_sync(nil, 1000)
-    endif
-endfunction
 
 if useformatting
     autocmd BufWritePre *.md Neoformat

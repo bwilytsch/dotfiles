@@ -14,19 +14,19 @@ window:
 font:
     size: 13
     normal:
-        family: JetBrainsMono Nerd Font
+        family: JetBrainsMono Nerd Font Mono
         style: Regular
 
     bold:
-        family: JetBrainsMono Nerd Font
+        family: JetBrainsMono Nerd Font Mono
         style: Bold
 
     italic:
-        family: JetBrainsMono Nerd Font
+        family: JetBrainsMono Nerd Font Mono
         style: Italic
 
     bold italic:
-        family: JetBrainsMono Nerd Font
+        family: JetBrainsMono Nerd Font Mono
         style: Bold Italic
 
     offset:

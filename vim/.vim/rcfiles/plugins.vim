@@ -32,6 +32,13 @@ Plug 'sbdchd/neoformat'
 Plug 'jonsmithers/vim-html-template-literals'
 Plug 'ap/vim-css-color'
 
+"--- Debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'Pocco81/dap-buddy'
+Plug 'David-Kunz/jester'
+
+
 "--- LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp-status.nvim'
