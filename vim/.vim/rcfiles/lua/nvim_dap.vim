@@ -6,40 +6,36 @@ vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''
 vim.fn.sign_define('DapBreakpointRejected', {text='🚫', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='➡️', texthl='', linehl='DebugBreakpointLine', numhl=''})
 
-dap.adapters.node2 = {
-  type = 'executable',
-  command = 'node',
-  args = {os.getenv('HOME') .. '/build/vscode-node-debug2/out/src/nodeDebug.js'},
+dap.adapters.chrome = {
+    type = "executable",
+    command = "node",
+    args = {os.getenv("HOME") .. "/build/vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
 }
 
-dap.adapters.firefox = {
-  type = 'executable',
-  command = 'node',
-  args = {os.getenv('HOME') .. '/build/vscode-firefox-debug/dist/adapter.bundle.js'},
+dap.configurations.typescript = { -- change this to javascript if needed
+    {
+        type = "chrome",
+        request = "attach",
+        program = "${file}",
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = "inspector",
+        port = 9222,
+        webRoot = "${workspaceFolder}"
+    }
 }
 
-dap.configurations.typescript = {
-  {
-    name = 'Debug with Firefox',
-    type = 'firefox',
-    request = 'launch',
-    reAttach = true,
-    url = 'http://localhost:3000',
-    webRoot = '${workspaceFolder}',
-    firefoxExecutable = '/usr/bin/firefox'
-  }
-}
-
-dap.configurations.typescriptreact = {
-  {
-    name = 'Debug with Firefox',
-    type = 'firefox',
-    request = 'launch',
-    reAttach = true,
-    url = 'http://localhost:3000',
-    webRoot = '${workspaceFolder}',
-    firefoxExecutable = '/usr/bin/firefox'
-  }
+dap.configurations.typescriptreact = { -- change to typescript if needed
+    {
+        type = "chrome",
+        request = "attach",
+        program = "${file}",
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = "inspector",
+        port = 9222,
+        webRoot = "${workspaceFolder}"
+    }
 }
 
 dapui.setup({

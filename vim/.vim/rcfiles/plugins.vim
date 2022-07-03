@@ -35,7 +35,7 @@ Plug 'ap/vim-css-color'
 "--- Debugging
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
-Plug 'Pocco81/dap-buddy'
+" Plug 'Pocco81/dap-buddy'
 Plug 'David-Kunz/jester'
 
 
@@ -44,18 +44,25 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp-status.nvim'
 " Plug 'mfussenegger/nvim-jdtls'
 
+" Plug 'jose-elias-alvarez/null-ls.nvim'
+" Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+
 "--- Completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'f3fora/cmp-spell'
 
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
+
+Plug 'lewis6991/spellsitter.nvim'
 
 "--- Tellyscope
 Plug 'nvim-lua/popup.nvim'

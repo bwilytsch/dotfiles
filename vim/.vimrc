@@ -27,6 +27,7 @@ set signcolumn=yes
 set splitright
 set cmdheight=1
 set relativenumber
+set spell
 
 filetype plugin indent on
 filetype indent on

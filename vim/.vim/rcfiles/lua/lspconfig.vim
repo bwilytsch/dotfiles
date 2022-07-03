@@ -14,9 +14,13 @@ for _, sign in ipairs(signs) do
 end
 
 -- Show diagnostic when hovering
---vim.o.updatetime = 250
---vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_text = false
+})
 
 --vim.lsp.set_log_level("trace")
 
@@ -43,17 +47,26 @@ end
 
 local lspconfig = require('lspconfig')
 
-lspconfig.tsserver.setup{ on_attach=on_attach_vim, capabilities = capabilities }
+lspconfig.tsserver.setup{ on_attach=on_attach_vim, capabilities = capabilities, 
+  on_attach = function(client, bufnr)
+        client.resolved_capabilities.diagnostic = false
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+        on_attach_vim(client, bufnr)
+    end, 
+}
+lspconfig.tailwindcss.setup {
+  on_attach=on_attach_vim,
+  capabilities = capabilities
+}
+lspconfig.eslint.setup {
+  on_attach=on_attach_vim,
+  capabilities = capabilities
+}
 lspconfig.jsonls.setup{ on_attach=on_attach_vim, capabilities = capabilities }
 lspconfig.html.setup{ on_attach=on_attach_vim, capabilities = capabilities }
 lspconfig.cssls.setup{ on_attach=on_attach_vim, capabilities = capabilities }
 -- lspconfig.clojure_lsp.setup{ on_attach=on_attach_vim, capabilities = capabilities }
 lspconfig.gopls.setup { on_attach=on_attach_vim, capabilities = capabilities }
 lspconfig.sumneko_lua.setup { on_attach=on_attach_vim, capabilities = capabilities }
-lspconfig.tailwindcss.setup {
-  capabilities = capabilities
-}
-lspconfig.eslint.setup {
-  capabilities = capabilities
-}
 END
