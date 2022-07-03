@@ -72,6 +72,7 @@ Plug 'nvim-telescope/telescope-ui-select.nvim'
 
 "--- Git
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'kdheepak/lazygit.nvim'
 
 let g:AutoPairsShortcutToggle = ''
 let g:AutoPairsShortcutBackInsert = '<M-0>'
