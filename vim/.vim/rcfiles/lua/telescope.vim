@@ -47,6 +47,7 @@ require('telescope').setup{
 }
 require("telescope").load_extension("ui-select")
 require('telescope').load_extension('lazygit')
+require('telescope').load_extension('neoclip')
 
 END
 
@@ -58,6 +59,7 @@ nnoremap <Leader>ac			<cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent>gr			<cmd>Telescope lsp_references<CR>
 nnoremap <Leader>gs			<cmd>Telescope git_status<CR>
 nnoremap <Leader>lg			<cmd>LazyGit<CR>
+nnoremap <Leader>nc			<cmd>Telescope neoclip<CR>
 
 " Show diagnostics
 nnoremap <Leader>sd <cmd>Telescope diagnostics<CR>
