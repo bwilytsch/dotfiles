@@ -10,7 +10,8 @@ polybar-msg cmd quit
 echo "---" | tee -a /tmp/polybar-top.log 
 # polybar v1 >>/tmp/polybar-top.log & disown
 
-# polybar v1 
-# polybar applications
+polybar utils &
+polybar system &
+polybar applications &
 
 echo "Bars launched..."
