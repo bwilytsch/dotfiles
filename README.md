@@ -31,3 +31,8 @@ Eslint
 
 Typescript
 `npm install -g typescript-language-server`
+
+Packages:
+
+- Treesitter
+- NERDTree
