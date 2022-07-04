@@ -112,3 +112,7 @@ export PATH="$PNPM_HOME:$PATH"
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+# Custom Aliases
+# For Linux
+alias lg="lazygit"
