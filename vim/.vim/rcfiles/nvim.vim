@@ -11,5 +11,6 @@ source ~/.vim/rcfiles/lua/gitsigns.vim
 " source ~/.vim/rcfiles/lua/lualine.vim
 " source ~/.vim/rcfiles/lua/hardline.vim
 " source ~/.vim/rcfiles/lua/null_ls.vim
+" source ~/.vim/rcfiles/lua/nvim-neoclip.vim
 source ~/.vim/rcfiles/lua/nvim_dap.vim
 source ~/.vim/rcfiles/lua/spellsitter.vim

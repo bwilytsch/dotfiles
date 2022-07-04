@@ -27,6 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'sbdchd/neoformat'
+Plug 'AckslD/nvim-neoclip.lua'
 
 "--- Webdev
 Plug 'jonsmithers/vim-html-template-literals'
