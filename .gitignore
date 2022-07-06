@@ -1,2 +1,4 @@
 **/.vim/bundle
 **/.vim/autoload
+
+lazygit/.config/lazygit/state.yml
