@@ -38,7 +38,7 @@ set backspace=indent,eol,start
 source ~/.vim/rcfiles/plugins.vim
 
 "--- Source statusline
-source ~/.vim/rcfiles/statusline.vim
+" source ~/.vim/rcfiles/statusline.vim
 
 source ~/.vim/rcfiles/nvim.vim
 
