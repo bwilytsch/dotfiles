@@ -128,3 +128,7 @@ export PATH=$PATH:$GOBIN
 # For Linux
 alias lg="lazygit"
 # alias lazygit="LazyGit"
+
+alias mailhog="${HOME}/go/bin/MailHog"
+
+neofetch
