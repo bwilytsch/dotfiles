@@ -10,6 +10,7 @@ call plug#begin('~/.vim/bundle')
 "--- Theme
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 "--- Theming
 Plug 'ryanoasis/vim-devicons'
@@ -55,6 +56,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
+Plug 'xiyaowong/telescope-emoji.nvim'
 
 "--- Git
 Plug 'lewis6991/gitsigns.nvim'

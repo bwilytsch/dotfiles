@@ -41,16 +41,32 @@ source ~/.vim/rcfiles/statusline.vim
 
 source ~/.vim/rcfiles/nvim.vim
 
-
 "--- Theme 
 " set background=dark
 colorscheme gruvbox
 " colorscheme nord
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr term=NONE
-hi SignColumn guibg=NONE
-hi VertSplit guibg=NONE guifg='#444444' ctermbg=NONE
-hi StatusLine guibg=black guifg=white ctermbg=black
+" colorscheme tokyonight
+
+" Review this
+" hi Normal guibg=NONE ctermbg=NONE
+" hi LineNr term=NONE
+" hi SignColumn guibg=NONE ctermbg=NONE
+" hi VertSplit guibg=NONE guifg='#444444' ctermbg=NONE
+" hi StatusLine guibg=black guifg=white ctermbg=black
+
+hi Normal guibg=none ctermbg=none
+hi LineNr guibg=none ctermbg=none
+hi Folded guibg=none ctermbg=none
+hi NonText guibg=none ctermbg=none
+hi SpecialKey guibg=none ctermbg=none
+hi VertSplit guibg=none ctermbg=none
+hi SignColumn guibg=none ctermbg=none
+hi EndOfBuffer guibg=none ctermbg=none
+
+hi DiagnosticSignHint guibg=none ctermbg=none
+hi DiagnosticSignError guibg=none ctermbg=none
+hi DiagnosticSignInfo guibg=none ctermbg=none
+hi DiagnosticSignWarn guibg=none ctermbg=none
 
 "-- Formatting
 let g:neoformat_try_node_exe = 1
@@ -81,6 +97,7 @@ command! ToggleFormatting let useformatting = (useformatting == 0 ? 1 : 0)
 set encoding=UTF-8
 nmap <silent> <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+let NERDTreeWinSize=48
 
 "--- Remaps
 "Format

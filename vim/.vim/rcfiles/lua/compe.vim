@@ -1,6 +1,6 @@
 set completeopt=menu,menuone,noselect
 
-lua <<EOF
+lua << END
   -- Setup nvim-cmp.
   local cmp = require('cmp')
 
@@ -88,3 +88,8 @@ lua <<EOF
     })
   })
 
+-- Spelling
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { 'en_us' }
+
+END
