@@ -69,6 +69,7 @@ lua << END
       { name = 'vsnip' }, -- For vsnip users.
     }, {
       { name = 'buffer' },
+  --    { name = 'spell' }
     })
   })
 

@@ -26,7 +26,8 @@ set hidden
 set signcolumn=yes
 set splitright
 set cmdheight=1
-" set relativenumber
+set relativenumber
+set spell
 
 filetype plugin indent on
 filetype indent on
@@ -73,19 +74,12 @@ let g:neoformat_try_node_exe = 1
 
 let useformatting=1
 
-function DoFormat() 
-    if has("nvim") && g:useformatting
-        lua vim.lsp.buf.formatting_sync(nil, 1000)
-    endif
-endfunction
-
 if useformatting
-    autocmd BufWritePre *.md call DoFormat()
-    autocmd BufWritePre *.js call DoFormat()
-    autocmd BufWritePre *.jsx call DoFormat()
-    autocmd BufWritePre *.ts call DoFormat()
-    autocmd BufWritePre *.tsx call DoFormat()
-    autocmd InsertLeave *.tsx call DoFormat()
+    autocmd BufWritePre *.md Neoformat
+    autocmd BufWritePre *.js Neoformat
+    autocmd BufWritePre *.jsx Neoformat
+    autocmd BufWritePre *.ts Neoformat
+    autocmd BufWritePre *.tsx Neoformat
     autocmd BufWritePre *.html Neoformat
 endif
 
@@ -100,10 +94,12 @@ let NERDTreeShowHidden=1
 let NERDTreeWinSize=48
 
 "--- Remaps
-"Format
+" Format
 nnoremap <silent>ff    <cmd>Neoformat<CR><Esc>:w<CR>
-"Go to Def
+" Go to Def
 nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
+" Find references - replaced by telescope
+" nnoremap <silent>gr    <cmd>lua vim.lsp.buf.references()<CR>
 " Docs pls
 nnoremap <silent>K     <cmd>lua vim.lsp.buf.hover()<CR>
 " Params pls

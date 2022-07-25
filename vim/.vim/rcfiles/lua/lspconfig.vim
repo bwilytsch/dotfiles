@@ -23,6 +23,10 @@ vim.diagnostic.config({
   severity_sort = true
 })
 
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_text = false
+})
 
 -- Show diagnostic when hovering
 -- vim.o.updatetime = 250
