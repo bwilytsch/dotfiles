@@ -43,6 +43,7 @@ Plug 'David-Kunz/jester'
 "--- LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp-status.nvim'
+Plug 'jose-elias-alvarez/typescript.nvim'
 " Plug 'mfussenegger/nvim-jdtls'
 
 " Plug 'jose-elias-alvarez/null-ls.nvim'

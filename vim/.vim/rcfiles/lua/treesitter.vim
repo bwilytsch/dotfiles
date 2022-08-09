@@ -15,6 +15,7 @@ require('nvim-treesitter.configs').setup ({
     "jsdoc",
     "json",
     "vim",
+    "prisma",
   },
   highlight = {
     enable = true,
