@@ -131,4 +131,6 @@ alias lg="lazygit"
 
 alias mailhog="${HOME}/go/bin/MailHog"
 
-neofetch
+# neofetch
+
+alias luamake=/home/bwilytsch/lua-language-server/3rd/luamake/luamake

@@ -1,41 +1,47 @@
-lua << END
-
-local dap, dapui = require("dap"), require("dapui")
+local dap_status, dap = pcall(require, 'dap')
+if (not dap_status) then return end
+local dap_ui_status, dap_ui = pcall(require, 'dapui')
+if (not dap_ui_status) then return end
 
 vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapBreakpointRejected', {text='🚫', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='➡️', texthl='', linehl='DebugBreakpointLine', numhl=''})
 
-dap.adapters.firefox = {
+
+dap.adapters.chrome = {
     type = "executable",
     command = "node",
-    args = {os.getenv("HOME") .. "/build/vscode-firefox-debug/dist/adapter.bundle.js"} -- TODO adjust
+    args = {"./vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
 }
 
-dap.configurations.typescript = {{
-			name = "Debug with Firefox",
-			type = "firefox",
-			request = "launch",
-			reAttach = true,
-			sourceMaps = true,
-			url = "http://localhost:3000",
-			webRoot = "${workspaceFolder}",
-			firefoxExecutable = "/usr/bin/firefox",
-      }}
+dap.configurations.typescript = { -- change this to javascript if needed
+    {
+        type = "chrome",
+        request = "attach",
+        program = "${file}",
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = "inspector",
+        port = 9222,
+        webRoot = "${workspaceFolder}"
+    }
+}
 
-dap.configurations.typescriptreact = {{
-		name = "Debug with Firefox",
-		type = "firefox",
-		request = "launch",
-		reAttach = true,
-		sourceMaps = true,
-		url = "http://localhost:3000",
-		webRoot = "${workspaceFolder}",
-		firefoxExecutable = "/usr/bin/firefox",
-    }}
+dap.configurations.typescriptreact = { -- change to typescript if needed
+    {
+        type = "chrome",
+        request = "attach",
+        program = "${file}",
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = "inspector",
+        port = 9222,
+        webRoot = "${workspaceFolder}"
+    }
+}
 
 
-dapui.setup({
+dap_ui.setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings
@@ -91,13 +97,10 @@ dapui.setup({
   }
 })
 
+vim.keymap.set('n', '<leader>dc', "<cmd>lua require'dap'.continue()<cr>", {})
+vim.keymap.set('n', '<leader>dso', "<cmd>lua require'dap'.step_over()<cr>", {})
+vim.keymap.set('n', '<leader>dsi', "<cmd>lua require'dap'.step_into()<cr>", {})
 
-END
-
-nnoremap <silent> <leader>dc :lua require'dap'.continue()<CR>
-nnoremap <silent> <leader>dso :lua require'dap'.step_over()<CR>
-nnoremap <silent> <leader>dsi :lua require'dap'.step_into()<CR>
-
-nnoremap <silent> <leader>db :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>do :lua require'dapui'.toggle()<CR>
-nnoremap <silent> <leader>dx :lua require'dap'.terminate()<CR>
+vim.keymap.set('n', '<leader>db', "<cmd>lua require'dap'.toggle_breakpoint()<cr>", {})
+vim.keymap.set('n', '<leader>do', "<cmd>lua require'dapui'.toggle()<cr>", {})
+vim.keymap.set('n', '<leader>dx', "<cmd>lua require'dap'.terminate()<cr>", {})
