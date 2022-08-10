@@ -102,3 +102,35 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# pnpm
+export PNPM_HOME="/home/bojan/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/home/bwilytsch/.bun/_bun" ] && source "/home/bwilytsch/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/home/bwilytsch/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# Custom Aliases
+# For Linux
+alias lg="lazygit"
+# alias lazygit="LazyGit"
+
+alias mailhog="${HOME}/go/bin/MailHog"
+
+# neofetch
+
+alias luamake=/home/bwilytsch/lua-language-server/3rd/luamake/luamake
