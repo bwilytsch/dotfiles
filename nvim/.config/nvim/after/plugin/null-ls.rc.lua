@@ -5,6 +5,7 @@ if (not status_prettier) then return end
 
 null_ls.setup({})
 
+-- @NOTE: Move to a different file
 prettier.setup({
   bin = 'prettier', -- or `prettierd`
   filetypes = {
