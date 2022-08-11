@@ -50,3 +50,16 @@ vim.keymap.set('n', '<C-h>',
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope file_browser<cr>', { noremap = true } )
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', {} )
 vim.keymap.set('n', '<leader>nc', "<cmd>:lua require('telescope').extensions.neoclip.default()<cr>", {} )
+
+vim.keymap.set("n", "sf", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h", -- use path of current selected buffer
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 24 }
+  })
+end)
