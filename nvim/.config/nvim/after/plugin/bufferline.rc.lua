@@ -18,18 +18,24 @@ bufferline.setup {
     show_buffer_default_icon = true,
     color_icons = false,
     max_name_length = 10,
-    diagnostics = "nvim_lsp",
+    diagnostics = false, -- "nvim_lsp",
     diagnostics_update_in_insert = false,
   },
   highlights = {
     separator = {
-      -- guifg = '#282828',
-      guifg = '#000000',
+      guifg = '#282828',
       guibg = '#000000'
     },
     separator_selected = {
-      -- guifg = '#282828',
-      guifg = '#000000',
+      guifg = '#282828',
+      guibg = '#000000'
+    },
+    buffer = {
+      guifg = '#3c3836',
+      guibg = '#000000'
+    },
+    tab = {
+      guifg = '#3c3836',
       guibg = '#000000'
     },
     background = {
@@ -40,8 +46,13 @@ bufferline.setup {
       guifg = '#1d2021',
       guibg = '#a89984'
     },
+    tab_selected = {
+      guifg = '#1d2021',
+      guibg = '#a89984'
+    },
     fill = {
-      guifg = "#504945"
+      guifg = "#504945",
+      guibg = "#000000"
     }
   }
 }

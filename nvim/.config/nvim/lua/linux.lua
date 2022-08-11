@@ -1,1 +1,1 @@
-print('load linux settings')
+print('...loading')

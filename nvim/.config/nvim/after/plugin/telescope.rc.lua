@@ -18,7 +18,8 @@ telescope.setup {
     file_browser = {
       theme = 'dropdown',
       -- disables netrw add use telescope-file-browser
-      hijack_netrw = true
+      hijack_netrw = true,
+      hidden = true
     }
   }
 }
@@ -30,7 +31,7 @@ telescope.load_extension 'neoclip'
 
 vim.keymap.set('n', '<C-n>',
   function()
-    builtin.find_files({
+    builtin.git_files({
       no_ignore = false,
       hidden = true
     })
@@ -41,5 +42,24 @@ vim.keymap.set('n', '<C-p>',
     builtin.live_grep()
   end)
 
+vim.keymap.set('n', '<C-h>',
+  function()
+    builtin.oldfiles()
+  end)
+
+vim.keymap.set('n', '<leader>fb', '<cmd>Telescope file_browser<cr>', { noremap = true } )
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', {} )
-vim.keymap.set('n', '<leader>nc', "<cmd>Telescope neoclip<cr>", {} )
+vim.keymap.set('n', '<leader>nc', "<cmd>:lua require('telescope').extensions.neoclip.default()<cr>", {} )
+
+vim.keymap.set("n", "sf", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h", -- use path of current selected buffer
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 24 }
+  })
+end)

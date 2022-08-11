@@ -1,11 +1,13 @@
 vim.cmd('autocmd!')
 vim.g.mapleader = ' '
 
+vim.noswapfile = true
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
 vim.wo.number = true
+vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 
 vim.opt.title = true

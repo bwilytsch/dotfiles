@@ -33,7 +33,9 @@ packer.startup(function(use)
 
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+
   use 'nvim-telescope/telescope-file-browser.nvim'
+  use "folke/todo-comments.nvim" -- ToDOs for Telescope
 
   -- Tabs/Buffers
   use {
@@ -45,12 +47,8 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim' -- Gitsigns
   use 'kdheepak/lazygit.nvim'
 
-  use {
-    'AckslD/nvim-neoclip.lua',
-    requires = {
-      {'kkharji/sqlite.lua', module = "sqlite"}
-    }
-  } 
+  use 'AckslD/nvim-neoclip.lua'
+  use 'kkharji/sqlite.lua'
 
   use 'b3nj5m1n/kommentary' -- vscode like comment/uncomment
 
@@ -60,5 +58,6 @@ packer.startup(function(use)
   }
 
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- DAP
+  use 'folke/zen-mode.nvim'
 
 end)

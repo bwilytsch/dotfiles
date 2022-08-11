@@ -41,7 +41,8 @@ g.setup({
     DiagnosticSignError = { bg = 'NONE', fg = "#cc241d" },
     DiagnosticSignWarn = { bg = 'NONE', fg = "#fabd2f" },
     DiagnosticSignInfo = { bg = 'NONE', fg = "#458588" },
-    DiagnosticSignHint = { bg = 'NONE', fg = "#689d6a" }
+    DiagnosticSignHint = { bg = 'NONE', fg = "#689d6a" },
+    VertSplit = { bg = 'NONE', fg = "#1d2021" },
   }
 })
 
