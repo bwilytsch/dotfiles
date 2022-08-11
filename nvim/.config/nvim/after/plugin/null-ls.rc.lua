@@ -3,26 +3,7 @@ if (not status) then return end
 local status_prettier, prettier = pcall(require, 'prettier');
 if (not status_prettier) then return end
 
---[[ null_ls.setup {
-  sources = {
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.formatting.prettier,
-    null_ls.builtins.completion.spell,
-  }
-} ]]
-null_ls.setup({
-  on_attach = function(client, bufnr)
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")
-      -- format on save
-      vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
-    end
-
-    if client.resolved_capabilities.document_range_formatting then
-      vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
-    end
-  end,
-})
+null_ls.setup({})
 
 prettier.setup({
   bin = 'prettier', -- or `prettierd`
