@@ -25,9 +25,13 @@ local on_attach = function(client, bufnr)
 end
 
 nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" }
+  cmd = { "typescript-language-server", "--stdio" },
+  -- manage via null-ls
+  capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+  end,
 }
 
 nvim_lsp.tailwindcss.setup {
@@ -35,10 +39,10 @@ nvim_lsp.tailwindcss.setup {
   filetypes = { "typescriptreact", "typescript.tsx" },
 }
 
--- nvim_lsp.eslint.setup {
---   on_attach = on_attach,
---   filetypes = { "typescriptreact", "typescript.tsx" },
--- }
+nvim_lsp.eslint.setup {
+  on_attach = on_attach,
+  filetypes = { "javscript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
+}
 
 -- Fix this later
 -- nvim_lsp.sumneko_lua.setup {
