@@ -24,9 +24,9 @@ vim.diagnostic.config({
 })
 
 -- Diagnostics
-vim.diagnostic.config({
-  virtual_text = false
-})
+-- vim.diagnostic.config({
+--   virtual_text = false
+-- })
 
 -- Show diagnostic when hovering
 -- vim.o.updatetime = 250

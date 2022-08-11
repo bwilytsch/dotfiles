@@ -71,7 +71,9 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
+Plug 'olacin/telescope-gitmoji.nvim'
 Plug 'xiyaowong/telescope-emoji.nvim'
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
 "--- Git
 Plug 'lewis6991/gitsigns.nvim'

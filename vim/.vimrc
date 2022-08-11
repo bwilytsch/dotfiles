@@ -98,6 +98,7 @@ let NERDTreeWinSize=48
 nnoremap <silent>ff    <cmd>Neoformat<CR><Esc>:w<CR>
 " Go to Def
 nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
+" nnoremap <silent>gi    <cmd>lua vim.lsp.buf.implementation()<CR>
 " Find references - replaced by telescope
 " nnoremap <silent>gr    <cmd>lua vim.lsp.buf.references()<CR>
 " Docs pls
