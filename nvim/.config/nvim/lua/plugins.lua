@@ -50,7 +50,7 @@ packer.startup(function(use)
   use 'AckslD/nvim-neoclip.lua'
   use 'kkharji/sqlite.lua'
 
-  use 'b3nj5m1n/kommentary' -- vscode like comment/uncomment
+  use 'numToStr/Comment.nvim' -- vscode like comment/uncomment
 
   use {
     'williamboman/mason.nvim', -- packag emanager for LSP servers, DAP servers, linters and formatters
