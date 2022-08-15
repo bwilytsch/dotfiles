@@ -25,14 +25,14 @@ local on_attach = function(client, bufnr)
   end
 end
 
-nvim_lsp.tsserver.setup({
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
-})
+-- nvim_lsp.tsserver.setup({
+--   on_attach = on_attach,
+--   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+--   cmd = { "typescript-language-server", "--stdio" },
+-- })
 
 nvim_lsp.tailwindcss.setup {
-  on_attach = on_attach,
+  -- on_attach = on_attach,
   filetypes = { "typescriptreact", "typescript.tsx" },
 }
 

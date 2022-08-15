@@ -47,7 +47,7 @@ vim.keymap.set('n', '<C-h>',
     builtin.oldfiles()
   end)
 
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope file_browser<cr>', { noremap = true } )
+vim.keymap.set('n', '<leader>t', '<cmd>Telescope file_browser<cr>', { noremap = true } )
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', {} )
 vim.keymap.set('n', '<leader>nc', "<cmd>:lua require('telescope').extensions.neoclip.default()<cr>", {} )
 
