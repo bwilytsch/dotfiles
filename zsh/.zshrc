@@ -134,3 +134,5 @@ alias mailhog="${HOME}/go/bin/MailHog"
 # neofetch
 
 alias luamake=/home/bwilytsch/lua-language-server/3rd/luamake/luamake
+
+alias chrome="${HOME}/usr/bin/google-chrome-stable"

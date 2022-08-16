@@ -58,7 +58,6 @@ packer.startup(function(use)
     'williamboman/mason-lspconfig.nvim',
   }
 
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- DAP
   use 'folke/zen-mode.nvim'
 
 end)
