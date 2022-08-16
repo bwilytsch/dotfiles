@@ -1,4 +1,5 @@
 export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH/.cargo/bin:$PATH}"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -136,3 +137,5 @@ alias mailhog="${HOME}/go/bin/MailHog"
 alias luamake=/home/bwilytsch/lua-language-server/3rd/luamake/luamake
 
 alias chrome="${HOME}/usr/bin/google-chrome-stable"
+
+

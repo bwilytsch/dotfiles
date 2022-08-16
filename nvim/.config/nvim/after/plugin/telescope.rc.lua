@@ -16,7 +16,10 @@ telescope.setup {
   },
   extensions = {
     file_browser = {
-      theme = 'dropdown',
+      -- theme = 'ivy',
+      -- layout_config = {
+      --   width = 100
+      -- },
       -- disables netrw add use telescope-file-browser
       hijack_netrw = true,
       hidden = true
@@ -58,8 +61,8 @@ vim.keymap.set("n", "sf", function()
     respect_gitignore = false,
     hidden = true,
     grouped = true,
-    previewer = false,
+    -- previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 24 }
+    -- layout_config = { height = 24 }
   })
 end)
