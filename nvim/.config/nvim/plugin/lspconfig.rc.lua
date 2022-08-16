@@ -15,6 +15,7 @@ end
 local protocol = require('vim.lsp.protocol')
 
 local on_attach = function(client, bufnr)
+  -- format on save
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = vim.api.nvim_create_augroup("Format", { clear = true }),
@@ -24,30 +25,22 @@ local on_attach = function(client, bufnr)
   end
 end
 
--- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
-
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
-}
+-- nvim_lsp.tsserver.setup({
+--   on_attach = on_attach,
+--   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+--   cmd = { "typescript-language-server", "--stdio" },
+-- })
 
 nvim_lsp.tailwindcss.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+  -- on_attach = on_attach,
   filetypes = { "typescriptreact", "typescript.tsx" },
 }
 
-nvim_lsp.eslint.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "javscript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
-}
-
+-- nvim_lsp.eslint.setup {
+--   on_attach = on_attach,
+--   filetypes = { "javscript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
+-- }
+--
 -- Fix this later
 -- nvim_lsp.sumneko_lua.setup {
 --   on_attach = on_attach,

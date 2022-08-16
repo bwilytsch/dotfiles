@@ -21,6 +21,7 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'jose-elias-alvarez/typescript.nvim'
   use 'hrsh7th/nvim-cmp' -- completion
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use {
@@ -50,14 +51,13 @@ packer.startup(function(use)
   use 'AckslD/nvim-neoclip.lua'
   use 'kkharji/sqlite.lua'
 
-  use 'b3nj5m1n/kommentary' -- vscode like comment/uncomment
+  use 'numToStr/Comment.nvim' -- vscode like comment/uncomment
 
   use {
     'williamboman/mason.nvim', -- packag emanager for LSP servers, DAP servers, linters and formatters
     'williamboman/mason-lspconfig.nvim',
   }
 
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- DAP
   use 'folke/zen-mode.nvim'
 
 end)

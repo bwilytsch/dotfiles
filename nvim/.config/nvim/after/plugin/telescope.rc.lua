@@ -16,7 +16,10 @@ telescope.setup {
   },
   extensions = {
     file_browser = {
-      theme = 'dropdown',
+      -- theme = 'ivy',
+      -- layout_config = {
+      --   width = 100
+      -- },
       -- disables netrw add use telescope-file-browser
       hijack_netrw = true,
       hidden = true
@@ -47,7 +50,7 @@ vim.keymap.set('n', '<C-h>',
     builtin.oldfiles()
   end)
 
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope file_browser<cr>', { noremap = true } )
+vim.keymap.set('n', '<leader>t', '<cmd>Telescope file_browser<cr>', { noremap = true } )
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', {} )
 vim.keymap.set('n', '<leader>nc', "<cmd>:lua require('telescope').extensions.neoclip.default()<cr>", {} )
 
@@ -58,8 +61,8 @@ vim.keymap.set("n", "sf", function()
     respect_gitignore = false,
     hidden = true,
     grouped = true,
-    previewer = false,
+    -- previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 24 }
+    -- layout_config = { height = 24 }
   })
 end)
