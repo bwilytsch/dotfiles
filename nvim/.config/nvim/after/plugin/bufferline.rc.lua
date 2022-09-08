@@ -23,36 +23,36 @@ bufferline.setup {
   },
   highlights = {
     separator = {
-      guifg = '#282828',
-      guibg = '#000000'
+      fg = '#282828',
+      bg = '#000000'
     },
     separator_selected = {
-      guifg = '#282828',
-      guibg = '#000000'
+      fg = '#282828',
+      bg = '#000000'
     },
     buffer = {
-      guifg = '#3c3836',
-      guibg = '#000000'
+      fg = '#3c3836',
+      bg = '#000000'
     },
     tab = {
-      guifg = '#3c3836',
-      guibg = '#000000'
+      fg = '#3c3836',
+      bg = '#000000'
     },
     background = {
-      guifg = '#3c3836',
-      guibg = '#000000'
+      fg = '#3c3836',
+      bg = '#000000'
     },
     buffer_selected = {
-      guifg = '#1d2021',
-      guibg = '#a89984'
+      fg = '#1d2021',
+      bg = '#a89984'
     },
     tab_selected = {
-      guifg = '#1d2021',
-      guibg = '#a89984'
+      fg = '#1d2021',
+      bg = '#a89984'
     },
     fill = {
-      guifg = "#504945",
-      guibg = "#000000"
+      fg = "#504945",
+      bg = "#000000"
     }
   }
 }
