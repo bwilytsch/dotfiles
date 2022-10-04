@@ -34,6 +34,7 @@ g.setup({
 	contrast = "soft", -- can be "soft" or "hard"
 	overrides = {
 		Normal = { bg = "NONE" },
+		PMenu = { bg = "NONE" },
 		SignColumn = { bg = "NONE" },
 		GitSignsAdd = { bg = "NONE", fg = "#98971a" },
 		GitSignsChange = { bg = "NONE", fg = "#d65d0e" },
@@ -48,4 +49,4 @@ g.setup({
 	},
 })
 
-vim.cmd("colorscheme gruvbox")
+vim.cmd([[colorscheme gruvbox]])

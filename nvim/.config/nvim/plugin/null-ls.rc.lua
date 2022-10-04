@@ -3,26 +3,36 @@ if not status then
 	return
 end
 
-local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
+local augroup = vim.api.nvim_create_augroup("Format", {})
+local on_attach = function(client, bufnr)
+	if client.supports_method("textDocument/formatting") then
+		-- if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.format({
+					bufnr = bufnr,
+					filter = function(client)
+						return client.name ~= "tsserver"
+					end,
+				})
+			end,
+		})
+	end
+end
 
 null_ls.setup({
-	on_attach = function(client, bufnr)
-		if client.server_capabilities.documentFormattingProvider then
-			vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")
-
-			-- format on save
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
-		end
-
-		if client.server_capabilities.documentRangeFormattingProvider then
-			vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
-		end
-	end,
+	debug = true,
+	on_attach = on_attach,
 	sources = {
 		-- formatting
 		null_ls.builtins.formatting.rustywind,
 		null_ls.builtins.formatting.stylua,
-		-- null_ls.builtins.formatting.prettierd,
+		-- prettierd is not supported
+		null_ls.builtins.formatting.prettier.with({ filetypes = { "tsx", "typescript", "typescriptreact" } }),
+		-- null_ls.builtins.formatting.eslint,
 
 		-- diagnostics
 		-- @NOTE: Eslint_d doesn't work with certian plugins
@@ -32,7 +42,7 @@ null_ls.setup({
 
 		-- code actions
 		-- @NOTE: Eslint_d doesn't work with certian plugins
-		-- null_ls.builtins.code_actions.eslint,
+		null_ls.builtins.code_actions.eslint,
 
 		-- spelling
 		-- null_ls.builtins.completion.spell,

@@ -6,14 +6,21 @@ end
 
 vim.cmd([[packadd packer.nvim]])
 
+packer.init({
+	max_jobs = 10,
+})
+
 packer.startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+	-- Themes
 	use({
 		"ellisonleao/gruvbox.nvim",
 		requires = { "tjdevries/colorbuddy.nvim" },
 	})
 	use("olivercederborg/poimandres.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use("neovim/nvim-lspconfig") -- LSP
@@ -45,7 +52,10 @@ packer.startup(function(use)
 		tag = "v2.*",
 	})
 
-	use("glepnir/lspsaga.nvim") -- LSP Saga
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+	}) -- LSP Saga
 	use("lewis6991/gitsigns.nvim") -- Gitsigns
 	use("kdheepak/lazygit.nvim")
 

@@ -31,10 +31,27 @@ local protocol = require("vim.lsp.protocol")
 -- })
 
 nvim_lsp.tailwindcss.setup({
-	filetypes = { "typescriptreact", "typescript.tsx" },
+	filetypes = {
+		"typescriptreact",
+		"typescript.tsx",
+		"typescript",
+		"tsx",
+		"javascript",
+		"javascript.jsx",
+		"javascriptreact",
+	},
 })
 
 nvim_lsp.eslint.setup({})
+
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.html.setup({
+	-- capabilities = capabilities,
+})
+
+-- nvim_lsp.graphql.setup({})
 
 -- Fix this later
 -- nvim_lsp.sumneko_lua.setup {

@@ -6,6 +6,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
+		-- theme = "catppuccin",
 		theme = "gruvbox",
 		-- theme = "poimandres",
 		-- component_separators = { left = '', right = ''},
