@@ -11,11 +11,16 @@ ts.setup {
     disable = {}
   },
   ensure_installed = {
+    'javascript',
     'typescript',
     'tsx',
     'lua',
     'json',
-    'css'
+    'jsdoc',
+    'css',
+    'prisma',
+    'graphql',
+    'astro'
   },
   autotag = {
     enabled = true
