@@ -20,7 +20,8 @@ ts.setup {
     'css',
     'prisma',
     'graphql',
-    'astro'
+    'astro',
+    'solidity'
   },
   autotag = {
     enabled = true

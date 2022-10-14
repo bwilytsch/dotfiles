@@ -38,6 +38,8 @@ nvim_lsp.tailwindcss.setup {
 
 nvim_lsp.prismals.setup {}
 
+nvim_lsp.solidity_ls.setup {}
+
 -- nvim_lsp.eslint.setup {
 --   on_attach = on_attach,
 --   filetypes = { "javscript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
