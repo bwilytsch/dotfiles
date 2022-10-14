@@ -51,7 +51,9 @@ nvim_lsp.html.setup({
 	-- capabilities = capabilities,
 })
 
--- nvim_lsp.graphql.setup({})
+nvim_lsp.prismals.setup({})
+nvim_lsp.solidity_ls.setup({})
+nvim_lsp.graphql.setup({})
 
 -- Fix this later
 -- nvim_lsp.sumneko_lua.setup {
