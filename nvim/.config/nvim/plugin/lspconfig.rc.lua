@@ -42,33 +42,14 @@ nvim_lsp.tsserver.setup({
 	cmd = { "typescript-language-server", "--stdio" },
 })
 
-nvim_lsp.eslint.setup({
-	filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
-    flags = { debounce_text_changes = 500 },
-    on_attach = function(client, bufnr)
-      client.server_capabilities.documentFormattingProvider = true
-      if client.server_capabilities.documentFormattingProvider then
-        local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          pattern = "*",
-          callback = function()
-            vim.lsp.buf.format({ async = true })
-          end,
-          group = au_lsp,
-        })
-      end
-    end,
-})
-
 nvim_lsp.tailwindcss.setup({
 	filetypes = {
 		"typescriptreact",
 		"typescript.tsx",
 		"tsx",
-		"javascript.jsx",
 		"javascriptreact",
-		-- "typescript",
-		-- "javascript",
+		"javascript.jsx",
+        "jsx"
 	},
 })
 
@@ -76,25 +57,3 @@ nvim_lsp.html.setup({})
 nvim_lsp.prismals.setup({})
 nvim_lsp.solidity_ls.setup({})
 nvim_lsp.graphql.setup({})
-
--- Fix this later
--- nvim_lsp.sumneko_lua.setup {
---   on_attach = on_attach,
---   cmd = {'~/build/lua-language-server/main.lua', "-E", "~/build/lua-language-server/bin/linux/lua-language-server"},
---   settings = {
---     Lua = {
---       runtime = {
---         version = "LuaJIT",
---       },
---       diagnostics = {
---         globals = { 'vim' }
---       },
---       workspace = {
---         library = vim.api.nvim_get_runtime_file("", true)
---       },
---       telemetry = {
---         enable = false
---       }
---     }
---   }
--- }
