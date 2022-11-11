@@ -16,41 +16,47 @@ end
 
 local protocol = require("vim.lsp.protocol")
 
--- local on_attach = function(client, bufnr)
---   -- disable auto-formatting
---   if client.server_capabilities.documentFormattingProvider then
---     client.server_capabilities.documentFormattingProvider = false
---     client.server_capabilities.documentRangeFormattingProvider = false
---   end
--- end
---
--- nvim_lsp.tsserver.setup({
---   on_attach = on_attach,
---   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
---   cmd = { "typescript-language-server", "--stdio" },
--- })
+-- This is called twice... in null.ls.rc as well
+local on_attach = function(client, bufnr)
+	-- format on save
+	if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = vim.api.nvim_create_augroup("Format", { clear = true }),
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.format({
+					bufnr = bufnr,
+					filter = function(client)
+						return client.name ~= "tsserver"
+					end,
+				})
+			end,
+		})
+	end
+end
+
+-- TypeScript
+nvim_lsp.tsserver.setup({
+	on_attach = on_attach,
+	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+	cmd = { "typescript-language-server", "--stdio" },
+})
+
+nvim_lsp.eslint.setup({})
 
 nvim_lsp.tailwindcss.setup({
 	filetypes = {
 		"typescriptreact",
 		"typescript.tsx",
-		"typescript",
 		"tsx",
-		"javascript",
 		"javascript.jsx",
 		"javascriptreact",
+		-- "typescript",
+		-- "javascript",
 	},
 })
 
-nvim_lsp.eslint.setup({})
-
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-nvim_lsp.html.setup({
-	-- capabilities = capabilities,
-})
-
+nvim_lsp.html.setup({})
 nvim_lsp.prismals.setup({})
 nvim_lsp.solidity_ls.setup({})
 nvim_lsp.graphql.setup({})

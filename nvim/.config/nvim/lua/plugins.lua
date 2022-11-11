@@ -13,6 +13,7 @@ packer.init({
 packer.startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+
 	-- Themes
 	use({
 		"ellisonleao/gruvbox.nvim",
@@ -20,6 +21,7 @@ packer.startup(function(use)
 	})
 	use("olivercederborg/poimandres.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("folke/tokyonight.nvim")
 
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
