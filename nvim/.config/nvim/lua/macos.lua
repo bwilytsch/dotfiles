@@ -1,4 +1,4 @@
-print('...loading Mac OS configuration')
+print('...loading MacOS configuration')
 
 -- Mapping
 local keymap =  vim.keymap
