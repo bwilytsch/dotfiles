@@ -128,6 +128,7 @@ export PATH=$PATH:$GOBIN
 # Custom Aliases
 # For Linux
 alias lg="lazygit"
+alias lzd="lazydocker"
 # alias lazygit="LazyGit"
 
 alias mailhog="${HOME}/go/bin/MailHog"

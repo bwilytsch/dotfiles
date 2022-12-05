@@ -22,6 +22,7 @@ ts.setup({
 		"graphql",
 		"astro",
 		"solidity",
+        "markdown",
 	},
 	autotag = {
 		enabled = true,

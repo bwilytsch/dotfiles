@@ -32,6 +32,7 @@ telescope.setup({
 telescope.load_extension("file_browser")
 telescope.load_extension("lazygit")
 telescope.load_extension("neoclip")
+telescope.load_extension("live_grep_args")
 
 vim.keymap.set("n", "<C-n>", function()
 	builtin.git_files({
@@ -40,8 +41,12 @@ vim.keymap.set("n", "<C-n>", function()
 	})
 end)
 
+-- vim.keymap.set("n", "<C-p>", function()
+-- 	builtin.live_grep()
+-- end)
+
 vim.keymap.set("n", "<C-p>", function()
-	builtin.live_grep()
+    telescope.extensions.live_grep_args.live_grep_args()
 end)
 
 vim.keymap.set("n", "<C-h>", function()

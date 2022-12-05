@@ -18,7 +18,7 @@ saga.init_lsp_saga({
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<C-j>", function()
-	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic").goto_next({ severity = { min = vim.diagnostic.severity.WARN } }) --  
 end, opts)
 
 -- Look Up

@@ -2,7 +2,7 @@
 -- if not status then
 -- 	return
 -- end
-
+--
 -- typescript.setup({
 -- 	disable_commands = false,
 -- 	debug = false,
@@ -10,6 +10,7 @@
 -- 		capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 -- 		on_attach = function(client)
 -- 			client.server_capabilities.document_formatting = false
+-- 			-- client.server_capabilities.diagnostics = false
 -- 		end,
 -- 		filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
 -- 		cmd = { "typescript-language-server", "--stdio" },

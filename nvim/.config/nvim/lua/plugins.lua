@@ -43,7 +43,11 @@ packer.startup(function(use)
 	use("windwp/nvim-ts-autotag")
 
 	use("nvim-lua/plenary.nvim")
-	use("nvim-telescope/telescope.nvim")
+	use{"nvim-telescope/telescope.nvim",
+        requires = {
+            { "nvim-telescope/telescope-live-grep-args.nvim"}
+        }
+    }
 
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("folke/todo-comments.nvim") -- ToDOs for Telescope
