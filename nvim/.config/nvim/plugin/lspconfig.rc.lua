@@ -14,25 +14,25 @@ for _, sign in ipairs(signs) do
 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
-local protocol = require("vim.lsp.protocol")
-
--- This is called twice... in null.ls.rc as well
+-- Formatting should be done via eslint OR prettier
 local on_attach = function(client, bufnr)
 	-- format on save
-	if client.server_capabilities.documentFormattingProvider then
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = vim.api.nvim_create_augroup("Format", { clear = true }),
-			buffer = bufnr,
-			callback = function()
-				vim.lsp.buf.format({
-					bufnr = bufnr,
-					filter = function(client)
-						return client.name ~= "tsserver"
-					end,
-				})
-			end,
-		})
-	end
+	-- if client.server_capabilities.documentFormattingProvider then
+	-- 	vim.api.nvim_create_autocmd("BufWritePre", {
+	-- 		group = vim.api.nvim_create_augroup("Format", { clear = true }),
+	-- 		buffer = bufnr,
+	-- 		callback = function()
+	-- 			vim.lsp.buf.format({
+	-- 				bufnr = bufnr,
+	-- 				filter = function(client)
+	-- 					return client.name ~= "tsserver"
+	-- 				end,
+	-- 			})
+	-- 		end,
+	-- 	})
+	-- end
+    -- Not sure if I want to do this here, but this is currently only used by my tsserver
+    require("twoslash-queries").attach(client, bufnr)
 end
 
 -- TypeScript
@@ -53,7 +53,27 @@ nvim_lsp.tailwindcss.setup({
 	},
 })
 
+nvim_lsp.eslint.setup({
+    on_attach = function()
+        vim.api.nvim_create_autocmd(
+            'BufWritePre',
+            { command = 'EslintFixAll', pattern = "*.tsx,*.ts,*.jsx,*.js"}
+        )
+    end
+})
+
+nvim_lsp.sumneko_lua.setup({
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' } -- mute 'vim' is undefined global warning
+            }
+        }
+    }
+})
 nvim_lsp.html.setup({})
 nvim_lsp.prismals.setup({})
 nvim_lsp.solidity_ls.setup({})
 nvim_lsp.graphql.setup({})
+nvim_lsp.rust_analyzer.setup({})
+nvim_lsp.taplo.setup({})
