@@ -14,15 +14,7 @@ packer.startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
 
-    -- Themes
-    use({
-        "ellisonleao/gruvbox.nvim",
-        requires = { "tjdevries/colorbuddy.nvim" },
-    })
-    use("olivercederborg/poimandres.nvim")
-    use({ "catppuccin/nvim", as = "catppuccin" })
-    use("folke/tokyonight.nvim")
-
+    -- LSP (Maybe move this to LSPZero)
     use("nvim-lualine/lualine.nvim")
     use("kyazdani42/nvim-web-devicons")
     use("neovim/nvim-lspconfig") -- LSP
@@ -33,24 +25,33 @@ packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lsp")
     use("jose-elias-alvarez/typescript.nvim")
     use("hrsh7th/nvim-cmp") -- completion
+    use('j-hui/fidget.nvim') -- Loading bar
     use("onsails/lspkind-nvim") -- vscode-like pictograms
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     })
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+    })
+    use({
+        "williamboman/mason.nvim", -- package manager for LSP servers, DAP servers, linters and formatters
+        "williamboman/mason-lspconfig.nvim",
+    })
 
+    -- Autocompletion
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
 
+    -- FZF
     use("nvim-lua/plenary.nvim")
     use { "nvim-telescope/telescope.nvim",
         requires = {
             { "nvim-telescope/telescope-live-grep-args.nvim" }
         }
     }
-
     use("nvim-telescope/telescope-file-browser.nvim")
-    use("folke/todo-comments.nvim") -- ToDOs for Telescope
 
     -- Tabs/Buffers
     use({
@@ -58,26 +59,34 @@ packer.startup(function(use)
         tag = "v2.*",
     })
 
-    use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-    }) -- LSP Saga
-
-    use("lewis6991/gitsigns.nvim") -- Gitsigns
+    -- Git
+    use("lewis6991/gitsigns.nvim")
     use("kdheepak/lazygit.nvim")
 
-    use("AckslD/nvim-neoclip.lua")
-    use("kkharji/sqlite.lua")
+    -- Testing
+    use("vim-test/vim-test")
 
+    -- Utils
+    use("mbbill/undotree") -- undo history
+    use("folke/todo-comments.nvim") -- ToDOs for Telescope
+    use {"AckslD/nvim-neoclip.lua", -- clipboard history
+        requires = {
+            { "kkharji/sqlite.lua" }
+        }
+    }
     use("numToStr/Comment.nvim") -- vscode like comment/uncomment
-    use("marilari88/twoslash-queries.nvim")
+    use("marilari88/twoslash-queries.nvim") -- typescript inline type print
+    use("folke/zen-mode.nvim") -- Focus Mode
 
+    -- Themes
     use({
-        "williamboman/mason.nvim", -- packag emanager for LSP servers, DAP servers, linters and formatters
-        "williamboman/mason-lspconfig.nvim",
+        "ellisonleao/gruvbox.nvim",
+        requires = { "tjdevries/colorbuddy.nvim" },
     })
+    use("olivercederborg/poimandres.nvim")
+    use({ "catppuccin/nvim", as = "catppuccin" })
+    use("folke/tokyonight.nvim")
 
-    use("folke/zen-mode.nvim")
 
     -- AI
     -- use("github/copilot.vim")
