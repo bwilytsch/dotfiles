@@ -5,7 +5,10 @@ bufferline.setup {
   options = {
     mode = 'tabs',
     numbers = "none",
-    indicator_icon = '▎',
+    indicator = {
+        icon = '▎',
+        style = 'icon'
+    },
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
