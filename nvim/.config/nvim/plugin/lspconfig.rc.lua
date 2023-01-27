@@ -1,7 +1,34 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
+local status_fidget, fidget = pcall(require, "fidget")
+
 if not status then
 	return
 end
+
+if status_fidget then
+    fidget.setup({
+        text = {
+            spinner = "dots_ellipsis",
+            done = "  ",
+            commenced = "  ",
+            completed = "  "
+        },
+        align = {
+            bottom = true,
+            right = true,
+        },
+        timer = {
+            fidget_decay = 100,
+            task_decay = 100,
+        },
+        window = {
+            -- relative = "win",
+            blend = 0,
+            -- border = "none"
+        }
+    })
+end
+
 
 local signs = {
 	{ name = "DiagnosticSignError", text = "" },
@@ -14,25 +41,15 @@ for _, sign in ipairs(signs) do
 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
--- Formatting should be done via eslint OR prettier
 local on_attach = function(client, bufnr)
-	-- format on save
-	-- if client.server_capabilities.documentFormattingProvider then
-	-- 	vim.api.nvim_create_autocmd("BufWritePre", {
-	-- 		group = vim.api.nvim_create_augroup("Format", { clear = true }),
-	-- 		buffer = bufnr,
-	-- 		callback = function()
-	-- 			vim.lsp.buf.format({
-	-- 				bufnr = bufnr,
-	-- 				filter = function(client)
-	-- 					return client.name ~= "tsserver"
-	-- 				end,
-	-- 			})
-	-- 		end,
-	-- 	})
-	-- end
-    -- Not sure if I want to do this here, but this is currently only used by my tsserver
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mapping is done via LspSaga
+
+  if client.name ~= "tsserver" then
     require("twoslash-queries").attach(client, bufnr)
+  end
 end
 
 -- TypeScript
@@ -71,9 +88,26 @@ nvim_lsp.sumneko_lua.setup({
         }
     }
 })
-nvim_lsp.html.setup({})
-nvim_lsp.prismals.setup({})
-nvim_lsp.solidity_ls.setup({})
-nvim_lsp.graphql.setup({})
-nvim_lsp.rust_analyzer.setup({})
-nvim_lsp.taplo.setup({})
+nvim_lsp.html.setup({
+    on_attach = on_attach
+})
+
+nvim_lsp.prismals.setup({
+    on_attach = on_attach
+})
+
+nvim_lsp.solidity_ls.setup({
+    on_attach = on_attach
+})
+
+nvim_lsp.graphql.setup({
+    on_attach = on_attach
+})
+
+nvim_lsp.rust_analyzer.setup({
+	on_attach = on_attach,
+})
+
+nvim_lsp.taplo.setup({
+    on_attach = on_attach
+})
