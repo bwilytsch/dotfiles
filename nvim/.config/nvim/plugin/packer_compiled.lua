@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -219,6 +224,11 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
     url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
+  ["telescope-live-grep-args.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope-live-grep-args.nvim",
+    url = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -229,10 +239,30 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["twoslash-queries.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/twoslash-queries.nvim",
+    url = "https://github.com/marilari88/twoslash-queries.nvim"
+  },
   ["typescript.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
   },
   ["zen-mode.nvim"] = {
     loaded = true,
