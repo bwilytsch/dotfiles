@@ -23,6 +23,7 @@ ts.setup({
 		"astro",
 		"solidity",
         "markdown",
+        "rust",
 	},
 	autotag = {
 		enabled = true,
