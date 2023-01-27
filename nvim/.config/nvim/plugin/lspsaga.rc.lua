@@ -82,9 +82,9 @@ nmap('K', "<cmd>Lspsaga hover_doc<CR>", 'Hover Documentation')
 nmap("<leader>sf", "<cmd>Lspsaga lsp_finder<CR>", '[S]earch [F]iles')
 
 -- Diagnostic
-nmap("<leader>sl", "<cmd>Lspsaga show_line_diagnostic<CR>", '[S]how [L]ine Diagnostic')
-nmap("<leader>sc", "<cmd>Lspsaga show_cursor_diagnostic<CR>", '[S]how [C]ursor Diagnostic')
-nmap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostic<CR>", '[S]how [C]ursor Diagnostic')
+nmap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", '[S]how [L]ine Diagnostic')
+nmap("<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", '[S]how [C]ursor Diagnostic')
+nmap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", '[S]how [C]ursor Diagnostic')
 
 -- Actions
 nmap('<leader>ca', "<cmd>Lspsaga code_action<CR>")
