@@ -57,11 +57,11 @@ vim.keymap.set("n", "<leader>m", function()
 	builtin.marks()
 end)
 
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>nc", "<cmd>:lua require('telescope').extensions.neoclip.default()<cr>", {})
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", {})
-vim.keymap.set("n", "<leader>nc", "<cmd>:lua require('telescope').extensions.neoclip.default()<cr>", {})
 
-vim.keymap.set("n", "<leader>t", function()
+vim.keymap.set("n", "<C-t>", function()
 	telescope.extensions.file_browser.file_browser({
 		path = "%:p:h", -- use path of current selected buffer
 		cwd = telescope_buffer_dir(),
