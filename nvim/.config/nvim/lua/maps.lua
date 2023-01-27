@@ -3,12 +3,16 @@ local keymap =  vim.keymap
 
 -- (n) normal mode, (x) key, (c) command
 
+-- Disable VIM record
+keymap.set('', 'q', '<Nop>')
+
 -- Do not yank with x, just deletes the following character
 keymap.set('n', 'x', '"_x')
 
 -- Increment/decrement integers
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
+keymap.set('x', 'leader<p>', "\"_dP")
 
 -- New tab
 keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
@@ -32,8 +36,6 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
--- Move lines (Linux)
--- keymap.set('n', '<A-j>', ':m+1<CR>==')
--- keymap.set('n', '<A-k>', ':m-2<CR>==')
--- keymap.set('v', '<A-j>', ":m'>+1<CR>gv=gv")
--- keymap.set('v', '<A-k>', ":m'<-2<CR>gv=gv")
+-- Move lines
+keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
