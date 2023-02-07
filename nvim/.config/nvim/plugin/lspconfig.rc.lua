@@ -111,3 +111,7 @@ nvim_lsp.rust_analyzer.setup({
 nvim_lsp.taplo.setup({
     on_attach = on_attach
 })
+
+nvim_lsp.pylsp.setup({
+    on_attach = on_attach
+})

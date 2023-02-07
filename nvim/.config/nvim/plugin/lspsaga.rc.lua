@@ -74,12 +74,11 @@ nmap("gd", "<cmd>Lspsaga goto_definition<CR>", '[G]oto [D]efinition')
 nmap("gr", "<cmd>Lspsaga rename<CR>", '[R]ename File')
 
 -- Utils
-nmap("gp", "<cmd>Lspsaga peek_definition<CR>", '[D]efinition [P]eek')
+nmap("gp", "<cmd>Lspsaga lsp_finder<CR>", 'Search Files')
+nmap("<leader>gp", "<cmd>Lspsaga peek_definition<CR>", 'Definition Peek')
 nmap("<leader>o", "<cmd>Lspsaga outline<CR>", 'Toggle [O]utline')
 nmap('K', "<cmd>Lspsaga hover_doc<CR>", 'Hover Documentation')
 
--- Search
-nmap("<leader>sf", "<cmd>Lspsaga lsp_finder<CR>", '[S]earch [F]iles')
 
 -- Diagnostic
 nmap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", '[S]how [L]ine Diagnostic')

@@ -21,6 +21,7 @@ ts.setup({
 		"prisma",
 		"graphql",
 		"astro",
+        "python",
 		"solidity",
         "markdown",
         "rust",

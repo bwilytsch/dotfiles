@@ -87,7 +87,6 @@ packer.startup(function(use)
     use({ "catppuccin/nvim", as = "catppuccin" })
     use("folke/tokyonight.nvim")
 
-
     -- AI
-    -- use("github/copilot.vim")
+    use("github/copilot.vim")
 end)

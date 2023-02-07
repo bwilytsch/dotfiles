@@ -12,6 +12,7 @@ keymap.set('n', 'x', '"_x')
 -- Increment/decrement integers
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
+-- What does this do?
 keymap.set('x', 'leader<p>', "\"_dP")
 
 -- New tab
@@ -37,5 +38,8 @@ keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Move lines
+keymap.set('n', 'J', ":m '>+1<CR>gv=gv")
+keymap.set('n', 'K', ":m '<-2<CR>gv=gv")
+
 keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 keymap.set('v', 'K', ":m '<-2<CR>gv=gv")

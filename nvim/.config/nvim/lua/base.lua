@@ -10,6 +10,9 @@ vim.wo.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "no"
 
+-- Adding this due to a delayed cursor movement issue
+vim.opt.timeoutlen = 100
+
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.hlsearch = false -- might change this in the future
