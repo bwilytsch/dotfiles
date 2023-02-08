@@ -74,65 +74,50 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["Comment.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/Comment.nvim",
-    url = "https://github.com/numToStr/Comment.nvim"
-  },
-  LuaSnip = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  catppuccin = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["colorbuddy.nvim"] = {
+  ["cmp-path"] = {
     loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
-    url = "https://github.com/tjdevries/colorbuddy.nvim"
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["copilot.vim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["diagnosticls-nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/diagnosticls-nvim",
+    url = "https://github.com/creativenull/diagnosticls-nvim"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
-  ["gitsigns.nvim"] = {
+  ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
-  },
-  ["lazygit.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
-    url = "https://github.com/kdheepak/lazygit.nvim"
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -154,15 +139,20 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
+  ["mason-nvim-dap.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/mason-nvim-dap.nvim",
+    url = "https://github.com/jayp0521/mason-nvim-dap.nvim"
+  },
+  ["mason-tool-installer.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/mason-tool-installer.nvim",
+    url = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -175,14 +165,10 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
+    config = { "\27LJ\2\nš\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\1K\0\1\0\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\1\17border_style\frounded\nsetup\flspsaga\frequire\0" },
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-neoclip.lua"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
-    url = "https://github.com/AckslD/nvim-neoclip.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -197,7 +183,7 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -209,74 +195,58 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["poimandres.nvim"] = {
+  ["rust-tools.nvim"] = {
     loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/poimandres.nvim",
-    url = "https://github.com/olivercederborg/poimandres.nvim"
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
-  ["prettier.nvim"] = {
+  ["tailwind-highlight.nvim"] = {
     loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/prettier.nvim",
-    url = "https://github.com/MunifTanjim/prettier.nvim"
-  },
-  ["sqlite.lua"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/sqlite.lua",
-    url = "https://github.com/kkharji/sqlite.lua"
-  },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
-  },
-  ["telescope-live-grep-args.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope-live-grep-args.nvim",
-    url = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/tailwind-highlight.nvim",
+    url = "https://github.com/princejoogie/tailwind-highlight.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["todo-comments.nvim"] = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
-    url = "https://github.com/folke/todo-comments.nvim"
-  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["twoslash-queries.nvim"] = {
+  ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/twoslash-queries.nvim",
-    url = "https://github.com/marilari88/twoslash-queries.nvim"
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
-  ["typescript.nvim"] = {
+  ["vim-surround"] = {
     loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/typescript.nvim",
-    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
-  },
-  undotree = {
-    loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-test"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/vim-test",
-    url = "https://github.com/vim-test/vim-test"
+    url = "https://github.com/janko/vim-test"
   },
-  ["zen-mode.nvim"] = {
+  ["vim-vsnip"] = {
     loaded = true,
-    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\nš\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\1K\0\1\0\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\1\17border_style\frounded\nsetup\flspsaga\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
