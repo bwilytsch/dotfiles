@@ -1,11 +1,11 @@
-local status, zen_mode = pcall(require, "zen_mode")
+local status, zen_mode = pcall(require, "zen-mode")
 
 if not status then
-  return
+	return
 end
 
 zen_mode.setup({
-  width = 0.85
+	width = 0.85,
 })
 
 vim.keymap.set("n", "<C-w>z", "<cmd>ZenMode<CR>", { silent = true })

@@ -41,22 +41,3 @@ vim.opt.smarttab = true
 vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 vim.opt.relativenumber = true
-
-vim.api.nvim_set_hl(0, "NormalFloat", {})
-vim.api.nvim_set_hl(0, "FloatBorder", {})
-vim.api.nvim_set_hl(0, "WhichKeyFloat", {})
-vim.api.nvim_set_hl(0, "BufferTabpageFill", {})
-vim.api.nvim_set_hl(0, "VertSplit", {
-	bg = "#16161e",
-	fg = "#16161e",
-})
-vim.api.nvim_set_hl(0, "TelescopeNormal", {})
-vim.api.nvim_set_hl(0, "TelescopeBorder", {})
-
-vim.api.nvim_set_hl(0, "StatusLine", {})
-vim.api.nvim_set_hl(0, "StatusLineNV", {})
-
-vim.api.nvim_set_hl(0, "StatusLineNV", {})
-
--- Comment in italics
-vim.api.nvim_set_hl(0, "Comment", { italic = true })

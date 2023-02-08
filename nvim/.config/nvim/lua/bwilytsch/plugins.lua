@@ -40,13 +40,12 @@ packer.startup(function(use)
 			"j-hui/fidget.nvim", -- Loading bar
 		},
 		config = function()
-			require("lspsaga").setup({ ui = { border_style = "rounded" } })
+			require("lspsaga").setup({ ui = { border_style = "rounded", winblend = 0 } })
 			require("mason").setup({
 				ui = {
 					border = "rounded",
 				},
 			})
-			require("fidget").setup({})
 		end,
 	})
 
@@ -76,6 +75,7 @@ packer.startup(function(use)
 
 	-- Utils
 	use("folke/which-key.nvim")
+	use("folke/zen-mode.nvim") -- Focus Mode
 
 	-- Telescope
 	use({
