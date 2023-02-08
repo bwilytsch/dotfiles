@@ -15,7 +15,7 @@ keymap.set("n", "x", '"_x')
 -- Increment/decrement integers
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
-keymap.set("x", "leader<p>", '"_dP')
+-- keymap.set("x", "leader<p>", '"_dP') -- leads to janky behavior in visual mode
 
 -- New tab
 -- keymap.set("n", "te", ":tabedit<Return>", { silent = true })

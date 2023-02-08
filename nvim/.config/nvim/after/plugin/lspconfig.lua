@@ -31,7 +31,6 @@ vim.diagnostic.config({
 local function on_attach(client, bufnr)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { desc = "Go to type definition", buffer = bufnr })
-	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implentation [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "gw", vim.lsp.buf.document_symbol, { desc = "Search document symbols [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol, { desc = "Search workspace symbols [LSP]", buffer = bufnr })
@@ -39,8 +38,13 @@ local function on_attach(client, bufnr)
 	vim.keymap.set("n", "<c-k>", vim.lsp.buf.signature_help, { desc = "Show signature help [LSP]", buffer = bufnr })
 
 	-- LSP Saga keymaps
+	vim.keymap.set("n", "gp", "<Cmd>Lspsaga lsp_finder<CR>", { desc = "Search for references [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover documentation [LSP]", buffer = bufnr })
-	vim.keymap.set("n", "<leader>af", "<Cmd>Lspsaga code_action<CR>", { desc = "Code action [LSP]", buffer = bufnr })
+	vim.keymap.set("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", { desc = "Code action [LSP]", buffer = bufnr })
+	vim.keymap.set("n", "<C-j>", function()
+		require("lspsaga.diagnostic"):goto_next({ severity = { min = vim.diagnostic.severity.WARN } })
+	end, { desc = "Go to next diagnostic [LSP]", buffer = bufnr })
+
 	vim.keymap.set(
 		"n",
 		"<leader>gr",

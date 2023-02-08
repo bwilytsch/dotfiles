@@ -41,3 +41,6 @@ vim.opt.smarttab = true
 vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 vim.opt.relativenumber = true
+
+-- Clipboard MacOS
+vim.opt.clipboard:append({ "unnamedplus" })

@@ -46,6 +46,7 @@ packer.startup(function(use)
 					border = "rounded",
 				},
 			})
+			require("mason-nvim-dap").setup()
 		end,
 	})
 
@@ -88,6 +89,9 @@ packer.startup(function(use)
 				"folke/todo-comments.nvim",
 			},
 		},
+		config = function()
+			require("todo-comments").setup({})
+		end,
 	})
 
 	-- Theme
