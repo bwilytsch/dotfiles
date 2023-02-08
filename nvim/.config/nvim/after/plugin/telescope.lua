@@ -7,7 +7,12 @@ end
 local telescope_actions = require("telescope.actions")
 local telescope_builtin = require("telescope.builtin")
 
+local function telescope_buffer_dir()
+	return vim.fn.expand("%:p:h")
+end
+
 telescope.load_extension("lazygit")
+telescope.load_extension("file_browser")
 
 telescope.setup({
 	defaults = {
@@ -26,6 +31,12 @@ telescope.setup({
 				["<C-j>"] = telescope_actions.move_selection_next,
 			},
 		},
+		extensions = {
+			file_browser = {
+				hijack_netrw = true,
+				hidden = true,
+			},
+		},
 	},
 })
 
@@ -33,9 +44,20 @@ vim.keymap.set("n", "<leader>gp", function()
 	telescope_builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
-vim.keymap.set("n", "<C-n>", function()
+vim.keymap.set("n", "<C-t>", function()
 	telescope_builtin.find_files({ hidden = true })
 end, { desc = "Find files" })
+
+vim.keymap.set("n", "<C-n>", function()
+	telescope.extensions.file_browser.file_browser({
+		path = "%:p:h", -- use path of current selected buffer
+		cwd = telescope_buffer_dir(),
+		respect_gitignore = false,
+		hidden = true,
+		grouped = true,
+		initial_mode = "normal",
+	})
+end)
 
 vim.keymap.set("n", "<C-h>", function()
 	telescope_builtin.oldfiles()

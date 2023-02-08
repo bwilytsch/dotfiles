@@ -1,7 +1,7 @@
 local status, cmp = pcall(require, "cmp")
 
 if not status then
-  return
+	return
 end
 
 -- vsnip
@@ -31,9 +31,21 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete({}),
 		["<C-y>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
 		["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
-		["<Tab>"] = cmp.mapping(function(fallback)
+		["<down>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
+			elseif vim.fn["vsnip#available"](1) == 1 then
+				feedkey("<Plug>(vsnip-expand-or-jump)", "")
+			elseif has_words_before() then
+				cmp.complete()
+			else
+				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+			end
+		end, { "i", "s" }),
+
+		["<up>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
 			elseif vim.fn["vsnip#available"](1) == 1 then
 				feedkey("<Plug>(vsnip-expand-or-jump)", "")
 			elseif has_words_before() then

@@ -41,24 +41,11 @@ local function on_attach(client, bufnr)
 	-- LSP Saga keymaps
 	vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover documentation [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "<leader>af", "<Cmd>Lspsaga code_action<CR>", { desc = "Code action [LSP]", buffer = bufnr })
-	vim.keymap.set("n", "<leader>rn", "<Cmd>Lspsaga rename<CR>", { desc = "Rename [LSP]", buffer = bufnr })
 	vim.keymap.set(
 		"n",
-		"<leader>ls",
-		"<Cmd>Lspsaga show_line_diagnostics<CR>",
-		{ desc = "Show diagnostic at line [LSP]", buffer = bufnr }
-	)
-	vim.keymap.set(
-		"n",
-		"[e",
-		"<cmd>Lspsaga diagnostic_jump_prev<CR>",
-		{ desc = "Go to next diagnostic [LSP]", buffer = bufnr }
-	)
-	vim.keymap.set(
-		"n",
-		"]e",
-		"<cmd>Lspsaga diagnostic_jump_next<CR>",
-		{ desc = "Go to previous diagnostic [LSP]", buffer = bufnr }
+		"<leader>gr",
+		"<Cmd>Lspsaga rename ++project<CR>",
+		{ desc = "Rename project wide [LSP]", buffer = bufnr }
 	)
 
 	if client.name == "tsserver" then
@@ -207,4 +194,26 @@ diagnosticls.setup({
 -- Rust
 require("rust-tools").setup({
 	server = default_config,
+})
+
+require("fidget").setup({
+	text = {
+		spinner = "dots_ellipsis",
+		done = "  ",
+		commenced = "  ",
+		completed = "  ",
+	},
+	align = {
+		bottom = true,
+		right = true,
+	},
+	timer = {
+		fidget_decay = 100,
+		task_decay = 100,
+	},
+	window = {
+		-- relative = "win",
+		blend = 0,
+		-- border = "none"
+	},
 })

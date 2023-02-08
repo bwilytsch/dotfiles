@@ -119,6 +119,16 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -164,8 +174,13 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\nš\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\1K\0\1\0\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\1\17border_style\frounded\nsetup\flspsaga\frequire\0" },
+    config = { "\27LJ\2\n¥\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\1K\0\1\0\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\2\rwinblend\3\0\17border_style\frounded\nsetup\flspsaga\frequire\0" },
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
@@ -205,10 +220,20 @@ _G.packer_plugins = {
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/tailwind-highlight.nvim",
     url = "https://github.com/princejoogie/tailwind-highlight.nvim"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
@@ -239,13 +264,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\nš\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\1K\0\1\0\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\1\17border_style\frounded\nsetup\flspsaga\frequire\0", "config", "nvim-lspconfig")
+try_loadstring("\27LJ\2\n¥\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\1K\0\1\0\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\2\rwinblend\3\0\17border_style\frounded\nsetup\flspsaga\frequire\0", "config", "nvim-lspconfig")
 time([[Config for nvim-lspconfig]], false)
 
 _G._packer.inside_compile = false

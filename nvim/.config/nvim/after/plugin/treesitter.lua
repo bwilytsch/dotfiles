@@ -13,6 +13,7 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"markdown",
 		"prisma",
+		"solidity",
 	},
 	highlight = { enable = true },
 })

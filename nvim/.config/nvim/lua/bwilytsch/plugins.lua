@@ -27,7 +27,7 @@ packer.startup(function(use)
 		"neovim/nvim-lspconfig",
 		requires = {
 			-- Debugger
-			-- "mfussenegger/nvim-dap",
+			"mfussenegger/nvim-dap",
 			-- Linter/Formatter
 			"creativenull/diagnosticls-nvim",
 			-- Tool Installer
@@ -81,9 +81,13 @@ packer.startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
-		requires = { {
-			"nvim-lua/plenary.nvim",
-		} },
+		requires = {
+			{
+				"nvim-lua/plenary.nvim",
+				"nvim-telescope/telescope-file-browser.nvim",
+				"folke/todo-comments.nvim",
+			},
+		},
 	})
 
 	-- Theme
