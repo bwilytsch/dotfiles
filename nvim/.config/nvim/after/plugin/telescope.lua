@@ -44,11 +44,11 @@ vim.keymap.set("n", "<leader>gp", function()
 	telescope_builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
-vim.keymap.set("n", "<C-t>", function()
+vim.keymap.set("n", "<C-n>", function()
 	telescope_builtin.find_files({ hidden = true })
 end, { desc = "Find files" })
 
-vim.keymap.set("n", "<C-n>", function()
+vim.keymap.set("n", "<C-t>", function()
 	telescope.extensions.file_browser.file_browser({
 		path = "%:p:h", -- use path of current selected buffer
 		cwd = telescope_buffer_dir(),
