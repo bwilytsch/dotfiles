@@ -41,6 +41,8 @@ local function on_attach(client, bufnr)
 	vim.keymap.set("n", "gp", "<Cmd>Lspsaga lsp_finder<CR>", { desc = "Search for references [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover documentation [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", { desc = "Code action [LSP]", buffer = bufnr })
+	vim.keymap.set("n", "<leader>so", "<Cmd>Lspsaga outline<CR>", { desc = "Show outline [LSP]", buffer = bufnr })
+	vim.keymap.set("n", "<leader>t", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle terminal [LSP]", buffer = bufnr })
 	vim.keymap.set("n", "<C-j>", function()
 		require("lspsaga.diagnostic"):goto_next({ severity = { min = vim.diagnostic.severity.WARN } })
 	end, { desc = "Go to next diagnostic [LSP]", buffer = bufnr })
@@ -102,10 +104,11 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"pylsp",
 		"rust_analyzer",
-		"sumneko_lua",
+		"lua_ls",
 		"tailwindcss",
 		"tsserver",
 		"yamlls",
+		"prismals",
 	},
 	automatic_installation = true,
 })
@@ -118,6 +121,7 @@ lspconfig.dockerls.setup(default_config)
 lspconfig.html.setup(default_config)
 lspconfig.jsonls.setup(default_config)
 lspconfig.yamlls.setup(default_config)
+lspconfig.prismals.setup(default_config)
 
 -- Tailwind CSS
 local tw_highlight = require("tailwind-highlight")
@@ -159,7 +163,7 @@ local lua_rtp = vim.split(package.path, ";")
 table.insert(lua_rtp, "lua/?.lua")
 table.insert(lua_rtp, "lua/?/init.lua")
 
-lspconfig.sumneko_lua.setup(vim.tbl_extend("force", default_config, {
+lspconfig.lua_ls.setup(vim.tbl_extend("force", default_config, {
 	settings = {
 		Lua = {
 			runtime = {

@@ -180,7 +180,7 @@ _G.packer_plugins = {
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\nÈ\1\0\0\4\0\n\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\0016\0\0\0'\2\t\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\19mason-nvim-dap\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\2\rwinblend\3\0\17border_style\frounded\nsetup\flspsaga\frequire\0" },
+    config = { "\27LJ\2\n÷\1\0\0\4\0\f\0\0246\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\0016\0\0\0'\2\b\0B\0\2\0029\0\2\0005\2\n\0005\3\t\0=\3\a\2B\0\2\0016\0\0\0'\2\v\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\19mason-nvim-dap\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\2\17border_style\frounded\rwinblend\3\0\14lightbulb\1\0\0\1\0\2\venable\1\21enable_in_insert\1\nsetup\flspsaga\frequire\0" },
     loaded = true,
     path = "/Users/bwilytsch/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
@@ -274,14 +274,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n÷\1\0\0\4\0\f\0\0246\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\0016\0\0\0'\2\b\0B\0\2\0029\0\2\0005\2\n\0005\3\t\0=\3\a\2B\0\2\0016\0\0\0'\2\v\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\19mason-nvim-dap\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\2\17border_style\frounded\rwinblend\3\0\14lightbulb\1\0\0\1\0\2\venable\1\21enable_in_insert\1\nsetup\flspsaga\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\nÈ\1\0\0\4\0\n\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\2\0005\2\b\0005\3\a\0=\3\5\2B\0\2\0016\0\0\0'\2\t\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\19mason-nvim-dap\1\0\0\1\0\1\vborder\frounded\nmason\aui\1\0\0\1\0\2\rwinblend\3\0\17border_style\frounded\nsetup\flspsaga\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

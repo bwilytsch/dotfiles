@@ -12,8 +12,10 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"typescript",
 		"markdown",
+		"markdown_inline",
 		"prisma",
 		"solidity",
+		"astro",
 	},
 	highlight = { enable = true },
 })

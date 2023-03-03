@@ -40,7 +40,16 @@ packer.startup(function(use)
 			"j-hui/fidget.nvim", -- Loading bar
 		},
 		config = function()
-			require("lspsaga").setup({ ui = { border_style = "rounded", winblend = 0 } })
+			require("lspsaga").setup({
+				lightbulb = {
+					enable = false,
+					enable_in_insert = false,
+				},
+				ui = {
+					border_style = "rounded",
+					winblend = 0,
+				},
+			})
 			require("mason").setup({
 				ui = {
 					border = "rounded",
