@@ -135,6 +135,15 @@ lspconfig.tailwindcss.setup({
 
 		on_attach(client, bufnr)
 	end,
+	settings = {
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+					{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" }, -- Enables class variants authoring syntax
+				},
+			},
+		},
+	},
 })
 
 -- Typescript/JavaScript

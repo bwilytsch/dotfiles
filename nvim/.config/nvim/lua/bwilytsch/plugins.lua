@@ -37,7 +37,10 @@ packer.startup(function(use)
 			"jayp0521/mason-nvim-dap.nvim",
 			"simrat39/rust-tools.nvim",
 			"glepnir/lspsaga.nvim",
-			"j-hui/fidget.nvim", -- Loading bar
+			{
+				tag = "legacy",
+				source = "j-hui/fidget.nvim", -- Loading bar
+			},
 		},
 		config = function()
 			require("lspsaga").setup({
