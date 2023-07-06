@@ -1,5 +1,7 @@
 local M = {}
 
+-- TODO: Redo all of this
+
 function M.setup()
 	-- require('bwilytsch.autocmds')
 	require('bwilytsch.keymaps')
