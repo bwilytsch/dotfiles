@@ -32,3 +32,6 @@ $ sh install-programs.sh
 ```bash
 $ sh setup-symlinks.sh
 ```
+
+## Credits
+Inspired by [trash_dev's dotfiles](https://github.com/bautistaaa/dotfiles)
