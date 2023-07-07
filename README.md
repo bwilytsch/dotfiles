@@ -1,9 +1,6 @@
 # Dotfiles v1.1
 
 ## Install Guide
-
-### Mac OS
-
 Installs and updates all required programs and dependencies such as:
 - Node
 - Git
@@ -17,8 +14,10 @@ And useful binaries:
 - Svgo
 - Rename
 
+### Mac OS
+
 ```bash
-$ sh install-programs.sh
+$ sh install-programs-macos.sh
 ```
  
 ```bash
@@ -26,4 +25,10 @@ $ sh setup-symlinks.sh
 ```
 
 ### Linux
-_tbd_
+```bash
+$ sh install-programs.sh
+```
+ 
+```bash
+$ sh setup-symlinks.sh
+```
