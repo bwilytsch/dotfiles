@@ -1,38 +1,29 @@
-# Dotfiles v1
+# Dotfiles v1.1
 
-## Guide
+## Install Guide
 
-### Setup
+### Mac OS
 
-Managed via `Stow`
+Installs and updates all required programs and dependencies such as:
+- Node
+- Git
+- Neovim
+- Lazygit
+- wget
 
-#### Mac
 
-`brew instlal stow`
+And useful binaries:
+- FFMPEG
+- Svgo
+- Rename
 
-#### Ubuntu
+```bash
+$ sh install-programs.sh
+```
+ 
+```bash
+$ sh setup-symlinks.sh
+```
 
-`sudo apt instlal stow`
-
-### Usage
-
-Symlink file via
-`stow <package_name>`
-
-### Requirements
-
-- tmux/tpm
-- VimPlug
-
-#### NPM Packages
-
-Eslint
-`npm install -g vscode-langservers-extracted`
-
-Typescript
-`npm install -g typescript-language-server`
-
-Packages:
-
-- Treesitter
-- NERDTree
+### Linux
+_tbd_
