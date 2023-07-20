@@ -36,7 +36,7 @@ brew install tmux
 brew install lazygit
 
 # Install other useful binaries
-brew install node
+brew install nvm
 brew install git
 brew install ffmpeg
 brew install rename
@@ -44,6 +44,9 @@ brew install svgo
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+# Get Node and npm
+nvm install v16.20.1
 
 npm install -g prettier
 npm install -g ngrok

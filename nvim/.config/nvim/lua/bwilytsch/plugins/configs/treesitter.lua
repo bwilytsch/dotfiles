@@ -12,8 +12,8 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"typescript",
 		"prisma",
-        "markdown",
-        "markdown_inline",
+    "markdown",
+    "markdown_inline",
 	},
 	highlight = { enable = true },
 	context_commentstring = {

@@ -1,6 +1,10 @@
 zmodload zsh/zprof
 
-export PATH="$PATH:/usr/local/share/npm/bin"
+# export NODE_PATH=`which node`
+# export PATH="$PATH:/usr/local/share/npm/bin"
+# export PATH="$PATH:/.nvm/version/node/v18.16.1/bin/node"
+# export PATH="$(yarn global bin):$PATH"
+
 export PATH="$PATH/.cargo/bin:$PATH}"
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -19,8 +23,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # pnpm
-export PNPM_HOME="/home/bojan/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export PNPM_HOME="/home/bojan/.local/share/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # export NVM_DIR="$HOME/.nvm"
@@ -64,3 +68,4 @@ if [ -f '/Users/bwilytsch/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 ##THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #export SDKMAN_DIR="$HOME/.sdkman"
 #[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# export PATH="/usr/local/bin:$PATH"
