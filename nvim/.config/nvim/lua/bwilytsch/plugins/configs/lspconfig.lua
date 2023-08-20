@@ -158,6 +158,8 @@ require("mason-lspconfig").setup({
     "tailwindcss",
     "tsserver",
     "yamlls",
+    "clangd",
+    "gopls",
   },
   automatic_installation = true,
 })
@@ -170,6 +172,8 @@ lspconfig.dockerls.setup(default_config)
 lspconfig.html.setup(default_config)
 lspconfig.jsonls.setup(default_config)
 lspconfig.yamlls.setup(default_config)
+lspconfig.clangd.setup(default_config)
+lspconfig.gopls.setup(default_config)
 
 -- Tailwind CSS
 local tw_highlight = require("tailwind-highlight")
@@ -205,6 +209,8 @@ lspconfig.tsserver.setup({
     },
   },
 })
+
+-- C/C++
 
 -- Lua
 local lua_rtp = vim.split(package.path, ";")

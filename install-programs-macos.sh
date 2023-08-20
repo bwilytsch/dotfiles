@@ -45,6 +45,9 @@ brew install svgo
 # Remove outdated versions from the cellar
 brew cleanup
 
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Get Node and npm
 nvm install v16.20.1
 

@@ -58,6 +58,9 @@ alias luamake=/home/bwilytsch/lua-language-server/3rd/luamake/luamake
 alias chrome="${HOME}/usr/bin/google-chrome-stable"
 
 
+# MySQL
+export PATH="${PATH}:/usr/local/mysql-shell-8.1.1-macos13-arm64/bin"
+
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/bwilytsch/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bwilytsch/Downloads/google-cloud-sdk/path.zsh.inc'; fi
