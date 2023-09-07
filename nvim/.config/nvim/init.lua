@@ -1,1 +1,2 @@
-require("bwilytsch").setup()
+require("bwilytsch.core")
+require("bwilytsch.lazy")
