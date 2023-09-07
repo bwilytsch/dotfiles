@@ -1,10 +1,13 @@
 require("zen-mode").setup({
 	width = 0.85,
+  options = {
+    number = true
+  },
   plugins = {
     tmux = { enabled = false },
     kitty = {
-      enabled = false,
-      font = "+9"
+      enabled = true,
+      font = "+4",
     }
   },
 })

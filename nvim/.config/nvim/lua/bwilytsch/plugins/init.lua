@@ -157,7 +157,8 @@ local user_plugins = {
   },
 
   -- Theme/Syntax
-  { "folke/tokyonight.nvim",                as = "tokyonight" },
+  { "folke/tokyonight.nvim", as = "tokyonight" },
+  { "Mofiqul/dracula.nvim" },
   {
     "nvim-lualine/lualine.nvim",
     requires = "nvim-tree/nvim-web-devicons",
