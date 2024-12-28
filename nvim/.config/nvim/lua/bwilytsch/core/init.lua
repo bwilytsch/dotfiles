@@ -1,2 +1,2 @@
-require("bwilytsch.core.keymaps")
-require("bwilytsch.core.options")
+require 'bwilytsch.core.keymaps'
+require 'bwilytsch.core.options'

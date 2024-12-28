@@ -18,6 +18,7 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -72,3 +73,11 @@ if [ -f '/Users/bwilytsch/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 #export SDKMAN_DIR="$HOME/.sdkman"
 #[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 # export PATH="/usr/local/bin:$PATH"
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+
+# NVM setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash completion

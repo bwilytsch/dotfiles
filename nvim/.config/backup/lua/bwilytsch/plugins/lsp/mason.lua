@@ -41,7 +41,6 @@ return {
 				"yamlls",
 				"clangd",
 				"gopls",
-				"csharp_ls",
 				"marksman",
 				"pyright",
 			},

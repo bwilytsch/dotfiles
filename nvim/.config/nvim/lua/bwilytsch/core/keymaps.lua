@@ -1,46 +1,31 @@
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- Mapping
-local keymap = vim.keymap
-
--- (n) normal mode, (x) key, (c) command
-keymap.set("n", "<leader>w", ":w<CR>", { silent = true })
-keymap.set("n", "<leader>q", ":q<CR>", { silent = true })
-
+-- Custom Keymaps
+-- vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>w', ':w<CR>', { silent = true })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { silent = true })
 -- Disable VIM record
-keymap.set("", "q", "<Nop>")
+-- vim.keymap.set('', 'q', '<Nop>')
+-- Character operations
+vim.keymap.set('n', 'x', '"_x') -- Delete without yanking
+-- Number operations
+vim.keymap.set('n', '+', '<C-a>') -- Increment
+vim.keymap.set('n', '-', '<C-x>') -- Decrement
+-- Window management
+vim.keymap.set('n', 'ss', ':split<CR><C-w>w', { silent = true, desc = 'Split horizontally', noremap = true })
+vim.keymap.set('n', 'sv', ':vsplit<CR><C-w>w', { silent = true, desc = 'Split vertically', noremap = true })
+-- Window navigation
+vim.keymap.set('n', 'sl', '<C-w>l', { noremap = true })
+vim.keymap.set('n', 'sh', '<C-w>h', { noremap = true })
+vim.keymap.set('n', 'sj', '<C-w>j', { noremap = true })
+vim.keymap.set('n', 'sk', '<C-w>k', { noremap = true })
+-- Line movement in visual mode
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 
--- Do not yank with x, just deletes the following character
-keymap.set("n", "x", '"_x')
+-- Kickstart keyamaps
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Increment/decrement integers
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
--- keymap.set("x", "leader<p>", '"_dP') -- leads to janky behavior in visual mode
-
--- New tab
--- keymap.set("n", "te", ":tabedit<Return>", { silent = true })
--- keymap.set("n", "tc", ":tabclose<Return>", { silent = true })
-
--- Split window
--- Could also be <C-w>s
-keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
--- Could also be <C-w>v
-keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
-
--- Test: Move window
-keymap.set("", "sl", "<C-w>l")
-keymap.set("", "sh", "<C-w>h")
-keymap.set("", "sj", "<C-w>j")
-keymap.set("", "sk", "<C-w>k")
-
--- Test: Resize window
--- keymap.set("n", "<C-w><left>", "<C-w><")
--- keymap.set("n", "<C-w><right>", "<C-w>>")
--- keymap.set("n", "<C-w><up>", "<C-w>+")
--- keymap.set("n", "<C-w><down>", "<C-w>-")
-
--- Move lines
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+-- Diagnostic keymaps
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
