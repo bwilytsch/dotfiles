@@ -102,6 +102,7 @@ return {
 				{ desc = "Show signature help [LSP]", buffer = bufnr }
 			)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show stuff on hover", buffer = bufnr })
+
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action [LSP]", buffer = bufnr })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename [LSP]", buffer = bufnr })
 
