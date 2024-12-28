@@ -11,4 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({{ import = "bwilytsch.plugins" }, { import = "bwilytsch.plugins.focusmode" }, { import = "bwilytsch.plugins.lsp" }})
+require("lazy").setup({
+  { import = "bwilytsch.plugins" },
+  { import = "bwilytsch.plugins.focusmode" },
+  { import = "bwilytsch.plugins.lsp" },
+  { import = "bwilytsch.plugins.python" },
+})

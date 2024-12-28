@@ -5,6 +5,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 local keymap = vim.keymap
 
 -- (n) normal mode, (x) key, (c) command
+keymap.set("n", "<leader>w", ":w<CR>", { silent = true })
+keymap.set("n", "<leader>q", ":q<CR>", { silent = true })
 
 -- Disable VIM record
 keymap.set("", "q", "<Nop>")
@@ -40,8 +42,5 @@ keymap.set("", "sk", "<C-w>k")
 -- keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Move lines
-keymap.set("n", "J", ":m '>+1<CR>gv=gv")
-keymap.set("n", "K", ":m '<-2<CR>gv=gv")
-
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")

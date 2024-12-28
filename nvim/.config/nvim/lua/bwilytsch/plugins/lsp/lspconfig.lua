@@ -45,7 +45,7 @@ return {
 			end
 		end
 
-		local function register_fmt_autosave(name, bufnr)
+		local function register_fmt_autosave(_, bufnr)
 			vim.api.nvim_clear_autocmds({ group = format_group, buffer = bufnr })
 			vim.api.nvim_create_autocmd("BufWritePost", {
 				group = format_group,
@@ -122,6 +122,11 @@ return {
 				register_fmt_keymap(client.name, bufnr)
 				register_fmt_autosave(client.name, bufnr)
 			end
+
+			if client.name == "astro" then
+				register_fmt_keymap(client.name, bufnr)
+				register_fmt_autosave(client.name, bufnr)
+			end
 		end
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -142,7 +147,8 @@ return {
 		}
 
 		-- Language Servers
-		lspconfig.pylsp.setup(default_config)
+		-- lspconfig.pylsp.setup(default_config)
+		lspconfig.pyright.setup(default_config)
 		lspconfig.bashls.setup(default_config)
 		lspconfig.cssls.setup(default_config)
 		lspconfig.dockerls.setup(default_config)
@@ -150,11 +156,32 @@ return {
 		lspconfig.jsonls.setup(default_config)
 		lspconfig.yamlls.setup(default_config)
 		lspconfig.clangd.setup(default_config)
+		lspconfig.svelte.setup(default_config)
+		lspconfig.marksman.setup(default_config)
+		lspconfig.astro.setup(default_config)
+		-- lspconfig.csharp_ls.setup(default_config)
+
 		lspconfig.gopls.setup(default_config)
+		lspconfig.zls.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "zls" },
+			filetypes = { "zig", "zir" },
+			root_dir = lspconfig.util.root_pattern("zls.json", "build.zig", ".git"),
+			single_file_support = true,
+		})
 
 		-- Tailwind CSS
 		local tw_highlight = require("tailwind-highlight")
 		lspconfig.tailwindcss.setup({
+			settings = {
+				tailwindCSS = {
+					classRegex = {
+						{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+						{ "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+					},
+				},
+			},
 			on_attach = function(client, bufnr)
 				tw_highlight.setup(client, bufnr, {
 					single_column = false,
@@ -176,7 +203,7 @@ return {
 			vim.lsp.buf.execute_command(params)
 		end
 
-		lspconfig.tsserver.setup({
+		lspconfig.ts_ls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 			commands = {
@@ -186,6 +213,9 @@ return {
 				},
 			},
 		})
+
+		lspconfig.html.setup({})
+		-- lspconfig.denols.setup({})
 
 		-- C/C++
 
@@ -231,4 +261,11 @@ return {
 			server = default_config,
 		})
 	end,
+
+	-- HACK
+	--   vim.filetype.add({
+	--   extension = {
+	--     mdx = "markdown.mdx",
+	--   },
+	-- })
 }

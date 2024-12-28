@@ -31,7 +31,7 @@ vim.opt.list = true
 
 vim.opt.number = true
 vim.opt.numberwidth = 2
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3 -- Bumped to 3 for `avante` plugin
 vim.opt.scrolloff = 5
 vim.opt.showtabline = 0
 vim.opt.ttimeoutlen = 50

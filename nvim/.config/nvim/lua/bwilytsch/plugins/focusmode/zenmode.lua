@@ -11,7 +11,7 @@ return {
           number = true
         },
         plugins = {
-          tmux = { enabled = false },
+          tmux = { enabled = true },
           kitty = {
             enabled = true,
             font = "+4",
