@@ -50,11 +50,11 @@ return { -- Autocompletion
       window = {
         completion = {
           border = 'rounded',
-          -- winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+          winhighlight = 'Normal:NormalFloat,CursorLine:PmenuSel,Search:None',
         },
         documentation = {
           border = 'rounded',
-          -- winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder',
+          winhighlight = 'Normal:NormalFloat',
         },
       },
 

@@ -7,7 +7,7 @@ return {
 
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
       vim.api.nvim_set_hl(0, 'CmpNormal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'PMenu', { bg = 'none' })
+      vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
 
       vim.diagnostic.config {
         show_header = false,

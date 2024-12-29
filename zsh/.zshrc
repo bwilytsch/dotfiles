@@ -5,6 +5,7 @@ zmodload zsh/zprof
 # export PATH="$PATH:/.nvm/version/node/v18.16.1/bin/node"
 # export PATH="$(yarn global bin):$PATH"
 
+export DISABLE_GREETING=true
 export PATH="$PATH/.cargo/bin:$PATH}"
 
 export ZSH="$HOME/.oh-my-zsh"
