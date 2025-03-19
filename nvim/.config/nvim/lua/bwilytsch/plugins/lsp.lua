@@ -32,6 +32,32 @@ return {
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
+      vim.diagnostic.config {
+        underline = true,
+        signs = true,
+        virtual_text = true,
+        float = {
+          show_header = true,
+          source = true,
+          border = 'rounded',
+          focusable = false,
+        },
+        -- update_in_insert = false, -- default to false
+        severity_sort = false, -- default to false
+      }
+
+      -- Overwrite `d]` to jump to the next diagnostic and show the float
+      vim.keymap.set('n', ']d', function()
+        vim.diagnostic.goto_next()
+        vim.diagnostic.open_float(nil, { scope = 'cursor', focusable = true })
+      end, { noremap = true, silent = true })
+
+      -- Overwrite `d[` to jump to the previous diagnostic and show the float
+      vim.keymap.set('n', '[d', function()
+        vim.diagnostic.goto_prev()
+        vim.diagnostic.open_float(nil, { scope = 'cursor', focusable = true })
+      end, { noremap = true, silent = true })
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -153,7 +179,11 @@ return {
       local servers = {
         -- clangd = {},
         gopls = {},
+        zls = {},
         rust_analyzer = {},
+        biome = {},
+        tailwindcss = {},
+        -- denols = {},
         eslint = {
           on_attach = function(_, bufnr)
             vim.api.nvim_create_autocmd('BufWritePre', {
@@ -162,8 +192,6 @@ return {
             })
           end,
         },
-        biome = {},
-        tailwindcss = {},
         pyright = {
           settings = {
             python = {

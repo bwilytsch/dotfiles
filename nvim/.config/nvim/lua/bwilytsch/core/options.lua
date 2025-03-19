@@ -42,7 +42,7 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.signcolumn = 'yes'
 vim.opt.wrap = true
 vim.opt.cursorcolumn = false
@@ -55,7 +55,7 @@ vim.opt.numberwidth = 2
 vim.opt.laststatus = 3 -- Bumped to 3 for `avante` plugin
 vim.opt.showtabline = 0
 vim.opt.ignorecase = true
-vim.opt.smarttab = true
+-- vim.opt.smarttab = true
 vim.opt.termguicolors = true
 vim.opt.relativenumber = true
 
