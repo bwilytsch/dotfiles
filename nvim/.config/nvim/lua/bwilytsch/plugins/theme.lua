@@ -13,6 +13,12 @@ return {
         show_header = false,
         float = { border = 'rounded' },
       }
+
+      -- Diff highlighting with muted colors
+      vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#1a3327' })
+      vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#55252a' })
+      vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#4d4422' })
+      vim.api.nvim_set_hl(0, 'DiffText', { bg = '#4d4422' })
     end,
     opts = {
       transparent_bg = true,

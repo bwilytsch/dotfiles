@@ -48,6 +48,11 @@ When suggesting code actions: typescript-tools > eslint > biome
 - `.zshrc` sources `.zshrc.local` if it exists
 - Never commit API keys to the repository
 
+## Code Style
+- Minimal comments - only add when they provide real value
+- Don't comment well-named variables or self-explanatory code
+- Let the code speak for itself
+
 ## Commit Conventions
 - Keep commits focused and atomic
 - Use conventional commit messages when appropriate
