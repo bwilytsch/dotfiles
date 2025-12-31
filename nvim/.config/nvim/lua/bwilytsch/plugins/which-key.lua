@@ -2,6 +2,7 @@ return {
   'folke/which-key.nvim',
   event = 'VeryLazy',
   opts = {
+    delay = 99999999, -- Effectively disable auto-popup
     plugins = {
       marks = true,
       registers = true,
@@ -26,5 +27,8 @@ return {
       { '<leader>s', group = '[S]wap/[S]plit' },
       { '<leader>w', group = '[W]orkspace' },
     },
+  },
+  keys = {
+    { '<leader>?', function() require('which-key').show({ global = false }) end, desc = 'Buffer keymaps (which-key)' },
   },
 }
