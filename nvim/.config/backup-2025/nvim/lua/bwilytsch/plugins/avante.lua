@@ -10,10 +10,10 @@ return {
     providers = {
       claude = {
         endpoint = 'https://api.anthropic.com',
-        model = 'claude-sonnet-4-20250514',
+        model = 'claude-sonnet-4-5-20250929',
         extra_request_body = {
           temperature = 0.75,
-          max_tokens = 8192,
+          max_tokens = 4096,
         },
       },
     },
@@ -28,7 +28,7 @@ return {
     --- The below dependencies are optional,
     'echasnovski/mini.pick', -- for file_selector provider mini.pick
     'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
-    'saghen/blink.cmp', -- autocompletion for avante commands and mentions
+    'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
     'ibhagwan/fzf-lua', -- for file_selector provider fzf
     'stevearc/dressing.nvim', -- for input provider dressing
     'folke/snacks.nvim', -- for input provider snacks

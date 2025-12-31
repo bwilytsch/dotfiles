@@ -24,13 +24,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# pnpm
-# export PNPM_HOME="/home/bojan/.local/share/pnpm"
-# export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
 
 # # bun completions
@@ -39,6 +35,11 @@ source $ZSH/oh-my-zsh.sh
 # # Bun
 # export BUN_INSTALL="/home/bwilytsch/.bun"
 # export PATH="$BUN_INSTALL/bin:$PATH"
+
+# neovim
+alias vim="nvim"
+alias vi="nvim"
+export EDITOR=nvim  
 
 # go
 export GOPATH=$HOME/go
@@ -82,3 +83,24 @@ eval "$(starship init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash completion
+
+# Local secrets and machine-specific overrides (not tracked by git)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+export PATH="/usr/local/zig:$PATH"
+
+# Spoitfy
+alias sp="spotify_player"
+
+#Agentic Coding
+alias amp5="amp --try-gpt5"
+
+# pnpm
+export PNPM_HOME="/Users/bwilytsch/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Direnv Setup
+eval "$(direnv hook zsh)"

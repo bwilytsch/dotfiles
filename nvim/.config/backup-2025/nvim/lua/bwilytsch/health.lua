@@ -12,7 +12,7 @@ local check_version = function()
     return
   end
 
-  if vim.version.ge(vim.version(), '0.11') then
+  if vim.version.ge(vim.version(), '0.10-dev') then
     vim.health.ok(string.format("Neovim version is: '%s'", verstr))
   else
     vim.health.error(string.format("Neovim out of date: '%s'. Upgrade to latest stable or nightly", verstr))
@@ -35,7 +35,7 @@ end
 
 return {
   check = function()
-    vim.health.start 'bwilytsch.nvim'
+    vim.health.start 'kickstart.nvim'
 
     vim.health.info [[NOTE: Not every warning is a 'must-fix' in `:checkhealth`
 

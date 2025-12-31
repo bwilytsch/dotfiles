@@ -4,4 +4,10 @@
 
 lazygit/.config/lazygit/state.yml
 
+# Local secrets (never commit)
+**/.zshrc.local
+**/secrets
+**/.secrets
+**/.env.local
+
 

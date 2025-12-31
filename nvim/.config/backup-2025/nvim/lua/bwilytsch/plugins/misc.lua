@@ -4,5 +4,6 @@ return {
     main = 'ibl',
     opts = {},
   },
-  -- vim-sleuth removed: Neovim 0.11+ has native indent detection
+
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 }
