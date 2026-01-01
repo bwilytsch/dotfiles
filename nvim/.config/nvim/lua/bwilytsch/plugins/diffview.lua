@@ -10,12 +10,12 @@ return {
     { '<leader>gdt', '<cmd>DiffviewToggleFiles<cr>', desc = '[G]it [D]iffview [T]oggle files' },
   },
   opts = {
-    diff_binaries = false, -- Don't show binary diffs
-    enhanced_diff_hl = true, -- Better highlighting
+    diff_binaries = false,
+    enhanced_diff_hl = true,
     git_cmd = { 'git' },
     use_icons = true,
     show_help_hints = true,
-    watch_index = true, -- Update on index changes
+    watch_index = true,
     icons = {
       folder_closed = '📁',
       folder_open = '📂',
@@ -61,6 +61,22 @@ return {
   },
   config = function(_, opts)
     require('diffview').setup(opts)
+
+    -- Diff highlighting with muted colors
+    vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#1a3327' })
+    vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#55252a' })
+    vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#4d4422' })
+    vim.api.nvim_set_hl(0, 'DiffText', { bg = '#4d4422' })
+
+    -- Re-apply after colorscheme changes
+    vim.api.nvim_create_autocmd('ColorScheme', {
+      callback = function()
+        vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#1a3327' })
+        vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#55252a' })
+        vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#4d4422' })
+        vim.api.nvim_set_hl(0, 'DiffText', { bg = '#4d4422' })
+      end,
+    })
 
     -- Ensure syntax highlighting in diffview panes
     vim.api.nvim_create_autocmd({ 'BufEnter', 'WinEnter' }, {
